@@ -1,0 +1,68 @@
+page-offer {
+    p{
+        text-transform: capitalize;
+        padding-left:40px;
+        color: #014C9F;
+        
+    }
+   
+    .range{
+        width:85%;
+        margin:0px auto;
+    }
+    .fix{
+        margin:0px auto;
+        // border:solid red;
+        text-align: center;
+    }
+    .input{
+        background-color: #014C9F;
+        width:85%;
+        margin:0px auto;
+        border-radius: 100px;
+        color: white;
+    }
+    h3{
+        text-align: center;
+        color:#014C9F;
+        text-transform: capitalize;
+        margin-top:100px;
+    }
+    #item{
+        border:2px solid #014C9F;
+        width:85%;
+        margin:15px auto;
+        border-radius: 30px;
+    }
+    .contentdiv{
+        text-align: center;
+        margin-top:-40px;
+        button{
+        border-radius: 100px;
+        width:50%;
+        }
+    }
+    .scroll-content{
+        overflow-y: hidden;
+    }
+    .container{
+    //   border:2px solid red;
+         height:30%;
+         margin-top:90px;
+        //  margin:0px auto;
+    //   margin:10px auto;
+    }
+    .seconddiv{
+        // border:2px solid #014C9F;
+        padding-top:10px;
+        padding-right: 10px;
+        button{
+            font-size: 1.6em;
+            margin-left:85%;
+            border-radius: 200px;
+            // box-shadow: 2px 2px 2px rgba(1, 75, 159, 0.544);
+        }
+       
+    }
+    }
+    

@@ -1,0 +1,108 @@
+page-signupwithphone {
+    .move{
+        // border:solid red;
+        height:100%;
+        margin-top:60px;
+
+    }
+    .divImage{
+        text-align: center;
+        margin-top:13px;
+        img{
+            height:200px;
+        }
+    }
+    .header{
+        font-size: 2em;
+        color:red;
+        font-family: 'Roboto Slab', serif;
+        text-align: center;
+    }
+  
+    #anim1{
+        box-shadow: 1px 3px #014C9F;
+        border-radius: 100px;
+        width:80%;  
+        text-align: center;
+        margin:10px auto;
+        padding-left:10px;
+    }
+    .divbtn{
+        // border:2px solid red;
+        margin-top:20px;
+        text-align:center;
+        button{
+        border-radius: 100px;
+        width:200px;
+        }
+    }
+    .input{
+        border:2px solid transparent;
+        width:50px;
+        text-align: center;
+        border-radius: 10px;
+        padding-top:10px;
+            //  background-color:#E9E9E9;
+        // background-image: linear-gradient( rgb(243, 243, 243), rgba(243, 243, 243, 0.714)), url('../../assets/images2.jpg');
+        // background-color: #014C9F;
+    
+    }
+    .theCard{
+        text-align: center;
+    }
+    .moveCont2{
+        text-align: center; 
+        button{
+
+            text-transform: capitalize;
+        }
+  
+    }
+    #recaptcha-container{
+        // border:solid red;
+        margin:20px auto;
+        width:70%;
+        
+    }
+    .input2{
+        border:2px solid transparent;
+        width:50px;
+        text-align: center;
+        border-radius: 10px;
+        padding-top:10px;
+             background-color:#E9E9E9;
+        // background-image: linear-gradient( rgb(243, 243, 243), rgba(243, 243, 243, 0.714)), url('../../assets/images2.jpg');
+        // background-color: #014C9F;
+    
+    }
+    .inoutdiv{
+        // border:2px solid #014C9F;
+        text-align: center;
+        border-radius: 100px;
+        // background-color: #014C9F;
+        width:80%;
+        height:40px;
+        margin:0px auto;
+       
+        box-shadow: 1px 3px #014C9F;
+        margin-top:20px;
+       
+    }
+    .font{
+        text-align: center;
+    }
+    .input2{
+        // background-color: #014C9F;
+    }
+    .input3{
+       text-align: center;
+    }
+
+    .content{
+        background-image: linear-gradient( rgb(243, 243, 243), rgba(243, 243, 243, 0.714)), url('../../assets/images2.jpg');
+        background-size:cover;
+        //   background-attachment: fixed;
+          background-repeat: no-repeat;
+    }
+    
+}

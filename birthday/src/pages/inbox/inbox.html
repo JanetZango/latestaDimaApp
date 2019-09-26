@@ -1,0 +1,31 @@
+<ion-content>
+    <h1>Offering request</h1>
+    <div *ngIf="  this.disOffers.length == 0 || this.disOffers.length == undefind" class="undefinedMess">
+
+        <div class="container">
+            <img src="../../assets/empty.jpg">
+            <p>You dont have any requests yet...</p>
+        </div>
+    </div>
+    <div *ngFor="let a of disOffers">
+        <div class="main">
+            <div class="top">
+                <img src="{{a.downloadurl}}">
+            </div>
+            <div class="bottom">
+                <p><b>PersonOffering:</b>{{a.personOffering}}</p>
+                <p> <b>Duration:</b>{{a.Duration}}</p>
+                <p><b>MoneyOffered:</b>{{a.offer}}</p>
+                <p><b>Terms:</b>{{a.terms}}</p>
+                <div class="btn">
+                    <button ion-button clear (click)="removeImage(a.key)">Reject<ion-icon name="trash"></ion-icon>
+                    </button>
+                    <button ion-button clear *ngIf="!a.hasAccepted" (click)="a.hasAccepted == true"
+                        (click)="accepted()">Accept<ion-icon ios="ios-thumbs-up" md="md-thumbs-up">
+                        </ion-icon></button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</ion-content>

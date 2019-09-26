@@ -1,0 +1,209 @@
+page-profile {
+   
+    .profilemaindiv{
+        text-align: center;
+        padding:20px;
+        // img{
+            border-radius: 100%;
+            object-fit: cover;
+        //     height:200px;
+        // }
+    }
+    .condiv{
+        text-align: center;
+    }
+    .name{
+        text-transform: capitalize;
+        font-size: 1.7em;
+    }
+    h1{
+        font-family: 'Satisfy', cursive;
+       
+    }
+    .messDiv{
+        // border-radius: 10px;
+        height:80px;
+        width:300px;
+        margin:5px auto;
+        box-shadow: 2px 15px 20px -15px rgb(53, 53, 53);
+        display:flex;
+        padding-left:10px;
+      
+      img{
+         border-radius: 100px;
+         object-fit: cover;
+        
+      }
+      button{
+          height:20px;
+          border-radius: 10px;
+
+      }
+    }
+    .messDiv2{
+        // border-radius: 10px;
+        height:120px;
+        width:350px;
+        margin:5px auto;
+        box-shadow: 2px 15px 20px -15px rgb(53, 53, 53);
+        display:flex;
+        padding-left:10px;
+      
+      img{
+         border-radius: 100px;
+         object-fit: cover;
+        
+      }
+      button{
+          height:20px;
+          border-radius: 10px;
+
+      }
+    }
+
+
+    .messDiv3{
+        // border-radius: 10px;
+        height:77px;
+        width:350px;
+        margin:5px auto;
+        box-shadow: 2px 15px 20px -15px rgb(53, 53, 53);
+        display:flex;
+        padding-left:10px;
+      
+      img{
+         border-radius: 100px;
+         object-fit: cover;
+        
+      }
+     
+    }
+    .t{
+        font-size:1.5em;
+    }
+
+    
+   
+    .content{
+        // text-align: left;
+        padding-left:20px;
+        padding-top:20px;
+    }
+    .fixFont{
+        font-size: 2em;
+        font-family: 'Playfair Display', serif;
+    }
+
+    
+    .conMess{
+        padding-top: 10px;
+    }
+
+    .imgdi2v{
+        width:30%;
+        img{
+            height:60px;
+            width:60px;
+            object-fit: cover;
+            // border:2px solid red;
+            // padding-left:5px;
+            // padding-top:10px;
+        }
+    }
+    .imgdi3v{
+        width:30%;
+        .img2{
+            height:70px;
+            width:70px;
+            object-fit: cover;
+            // border:2px solid red;
+            // padding-left:5px;
+            // padding-top:10px;
+        }
+    }
+    .accConatiner{
+        height:100px;
+        width:300px;
+        box-shadow: 2px 15px 20px -15px rgb(53, 53, 53);
+        text-align: left;
+        padding-left:9px;
+        margin:auto;
+    }
+    .imgdi4v{
+        width:30%;
+        .img2{
+            height:70px;
+            width:70px;
+            object-fit: cover;
+            // border:2px solid red;
+            // padding-left:5px;
+            // padding-top:10px;
+        }
+    }
+    .condivmess{
+        width:80%;
+        padding-top:5px;
+        text-align: left;
+    
+        p{
+            text-transform: capitalize; 
+            left:0px;    
+        }
+        button{
+            height:20px; 
+            text-align: right;
+
+
+
+        }
+    }
+    .undefinedMess{
+    //   border:2px solid red;  
+      margin-top:-40px;
+        // border:2px solid red;
+      text-align: center;
+      p{
+            //    border:2px solid red;
+          font-family: 'Courier New', Courier, monospace;
+          color:#014b9f;
+          margin-top:-15px;
+          
+      }
+    }
+    #colorchane{
+        color:gold
+    }
+    .top{
+        height:30%;
+        // background-color: #014c9f;
+        background-image: linear-gradient( #014b9f, #014b9ffb), url('../../assets/images.jpg');
+        background-size:cover;
+        object-fit: cover;
+        //   background-attachment: fixed;
+          background-repeat: no-repeat;
+        // border-bottom-left-radius: 100px;
+
+    }
+    .bottom{
+        
+            height:80%;
+            margin-top:-80px;
+            text-align: center;
+            // background-color: green;
+        img{
+            border-radius: 100%;
+            width:150px;
+            height:150px;
+            object-fit: cover;
+
+        }
+    }
+    .p{
+        font-size:0.7em;
+    }
+    .img2{
+        width:100px;
+        height:100px;  
+        object-fit: cover;
+    }
+}

@@ -1,0 +1,92 @@
+page-signin {
+    .divImage{
+    
+        text-align: center;
+        margin-top:13px;
+        img{
+            height:200px;
+        }
+   
+    }
+    .move{
+        // border:solid red;
+        height:100%;
+        margin-top:60px;
+
+    }
+    p{
+        font-size: 2.5em;
+        text-align: center;
+        color:red;
+        font-family: 'Roboto Slab', serif;
+    }
+    .btnSign{
+        height: 40px;
+        border-radius: 100px;
+        width:50%;
+        text-align: center;
+    }
+    b{
+        color:#F28B00;
+    }
+    #forgotPassword{
+        text-transform: capitalize;
+    }
+    #textbtn{
+        text-transform: capitalize;  
+    }
+    #anim1{
+        box-shadow: 2px  3px #014C9F;
+        
+        border-radius: 100px;
+        width:80%;  
+        text-align: center;
+        margin:20px auto;
+        padding-left:20px;
+    }
+    #anim2{
+        border-radius: 100px;
+        width:60%;  
+
+    }
+    .moveCont{
+        text-align: center;
+        margin-top:35px;
+  
+    }
+    .moveCont2{
+        text-align: center;
+        // margin-top:35px;
+  
+    }
+    .movebtn{
+        border:2px solid green;
+        text-align: center;
+    }
+    span{
+        justify-content: center;
+    }
+    .help-block{
+        justify-content: center;
+    }
+   .theCard{
+       text-align: center;
+   }
+   .content{
+    //    border:solid red;
+       width:100%;
+       height:100%;
+     
+     background-image: linear-gradient( rgb(243, 243, 243), rgba(243, 243, 243, 0.714)), url('../../assets/images3.jpg');
+      background-size:cover;
+      background-repeat: no-repeat;
+  
+   }
+  
+ .wave{
+     background-color:  blue;
+ 
+    
+ }
+
+}

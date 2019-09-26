@@ -1,0 +1,51 @@
+page-pay {
+    .maindiv{
+        height:70%;
+        width:100%;
+        text-align: center;
+        // border:2px solid red;
+
+        button{
+            border-radius: 100px;
+            width:60%;
+            height:30px;
+        }
+
+        // p{
+        //     text-transform: capitalize;
+        //     font-size: 1.5em;
+        // }
+    }
+    h2{
+        color:black;
+    }
+    b{
+        font-family: 'Playfair Display', serif;
+    }
+
+    .top{
+        background-color: #014C9F;
+        height:10%;
+        width:100%;
+        img{
+            height:50px;
+            padding-left:10px;
+            padding-top:10px;
+        }
+    }
+    .font{
+        font-size:1.2em;
+       font-family: 'Satisfy', cursive;
+        margin-top:50px;
+        text-transform: capitalize;
+        
+    }
+    .bottom{
+      height:90%;
+      width:100%;
+    }
+    .content{
+        // background-image: linear-gradient( rgb(243, 243, 243), rgba(243, 243, 243, 0.714)), url('../../assets/images8.png');
+    
+    }
+}

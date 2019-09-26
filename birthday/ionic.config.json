@@ -1,0 +1,7 @@
+{
+  "name": "birthday",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

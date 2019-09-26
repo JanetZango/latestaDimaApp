@@ -1,0 +1,141 @@
+<ion-content>
+
+  <div class="top">
+
+  </div>
+  <div class="bottom">
+    <div *ngFor="let a of arr">
+      <img class="img" src={{a.downloadurl}}>
+      <p class="fixFont">{{a.name}}</p>
+      <!-- <p>{{a.email}}</p> -->
+    </div>
+    <div padding>
+      <ion-segment [(ngModel)]="request">
+        <ion-segment-button value="inbox" ngSelected="selected">
+          Personal Details
+        </ion-segment-button>
+        <ion-segment-button value="associate">
+          Recieved
+        </ion-segment-button>
+        <ion-segment-button value="accepted">
+          Payment
+        </ion-segment-button>
+        <ion-segment-button value="acceptedoffers">
+          Accepted Request
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+
+
+    <div [ngSwitch]="request">
+      <ion-list *ngSwitchCase="'associate'">
+        <div *ngIf="  this.paymentArr.length == 0 || this.paymentArr.length == undefind" class="undefinedMess">
+          <img src="../../assets/empty.jpg">
+          <div>
+            <p>No payment has been made yet...</p>
+          </div>
+        </div>
+        <div class="conMess">
+          <ion-card *ngFor="let p of paymentArr" class="messDiv2">
+            <div class="imgdi3v">
+              <img class="img2" src="{{p.downloadurl}}">
+            </div>
+            <div class="condivmess">
+              Name:<p class="p">{{p.name}}</p>
+              Payment Amt:<p class="p">{{p.Amount}}</p>
+            </div>
+
+          </ion-card>
+        </div>
+      </ion-list>
+
+      <ion-list *ngSwitchCase="'acceptedoffers'">
+        
+        <div *ngIf="this.getinbox !=null || this.getinbox !=undefind">
+          <ion-card *ngFor="let p of getinbox" class="messDiv2">
+            <div class="imgdi3v">
+              <img class="img2" src="{{p.downloadurl}}">
+            </div>
+            <div class="condivmess">
+              <p class="p"> <b>Person Name:</b>{{p.name}}</p>
+              <p class="p"> <b>Duration:</b>{{p.Duration}}</p>
+              <p class="p"><b>Offer:</b> {{p.offer}}</p>
+              <p class="p"> <b>Terms:</b> {{p.terms}}</p>
+              <p class="p"> <b>Message:</b> {{p.message}}</p>
+              <button ion-button clear (click)="accepted()">make payment<ion-icon ios="ios-thumbs-up" md="md-thumbs-up">
+                </ion-icon></button>
+
+            </div>
+          </ion-card>
+        </div>
+        <div *ngIf="this.getinbox2 !=null || this.getinbox2 !=undefind">
+          <ion-card *ngFor="let p of getinbox2" class="messDiv2">
+            <div class="imgdi4v">
+              <img class="img2" src="{{p.downloadurl}}">
+            </div>
+            <div class="condivmess">
+              <p class="p"> <b>Person Name:</b>{{p.name}}</p>
+              <p class="p"> <b>Duration:</b>{{p.Duration}}</p>
+              <p class="p"><b>Offer:</b> {{p.offer}}</p>
+              <p class="p"> <b>Terms:</b> {{p.terms}}</p>
+              <p class="p"> <b>Message:</b> {{p.message}}</p>
+            </div>
+          </ion-card>
+        </div>
+      </ion-list>
+      <ion-list *ngSwitchCase="'inbox'">
+        <h1>Account Details</h1>
+        <div class="content" *ngFor="let a of arr">
+          <div class="accConatiner">
+            <p> <b>AccountNo:</b>{{a.AccountNo}}</p>
+            <p><b>Bank Name:</b>{{a.Address}}</p>
+            <p><b>Contact Details:</b>{{a.ContactDetails}}</p>
+          </div>
+        </div>
+      </ion-list>
+
+
+      <ion-list *ngSwitchCase="'accepted'">
+        <div *ngIf="this.recieveArr.length == 0 || this.recieveArr.length == undefind" class="undefinedMess">
+          <img src="../../assets/empty.jpg">
+          <div>
+            <p>No one has been accepted yet...</p>
+          </div>
+        </div>
+        <div class="conMess">
+          <ion-card *ngFor="let x of recieveArr" class="messDiv3">
+            <div class="imgdi4v">
+              <img class="img2" src="{{x.downloadurl}}">
+            </div>
+            <div class="condivmess">
+              <p class="t">{{x.name}}</p>
+              <p class="p">{{x.message}}</p>
+              
+            </div>
+
+          </ion-card>
+        </div>
+      </ion-list>
+    </div>
+
+
+    <ion-fab top right (click)="logOut()">
+      <button ion-fab mini>
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-fab>
+
+    <ion-fab top left (click)="edit()">
+      <button ion-fab mini>
+        <ion-icon ios="ios-person" md="md-person"></ion-icon>
+      </button>
+    </ion-fab>
+
+    <ion-fab bottom left (click)="inbox()">
+      <button ion-fab mini>
+        <ion-icon ios="ios-person" md="md-person"></ion-icon>
+      </button>
+    </ion-fab>
+  </div>
+
+</ion-content>

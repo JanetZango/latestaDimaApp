@@ -1,0 +1,89 @@
+page-donation {
+    h3{
+        text-align: center;
+        text-transform: capitalize;
+        color:#014C9F;
+        padding-top:50px;
+    }
+     .alert-head{
+        color: #014C9F;
+    }
+    
+    .input{
+        background-color: #014C9F;
+        width:85%;
+        margin:25px auto;
+        border-radius: 100px;
+        color:white;
+        // margin-top:40px;
+        
+    }
+    #item{
+        border:2px solid #014C9F;
+        width:85%;
+        margin:0px auto;
+        border-radius: 30px;
+    }
+    .item-block{
+        border:2px solid #014C9F;
+    }
+    
+    #click-upload{
+        height:120px;
+        width:100px;
+        padding-top:5px;
+        text-align: center;
+    }
+    
+    .seconddiv{
+        // border:2px solid #014C9F;
+        padding-top:10px;
+        padding-right: 10px;
+        button{
+            font-size: 1.6em;
+            margin-left:85%;
+            border-radius: 200px;
+            // box-shadow: 2px 2px 2px rgba(1, 75, 159, 0.544);
+        }
+       
+    }
+    // .scroll-content{
+    //     overflow-y: hidden;
+    // }
+    .inputs{
+        // border : 2px solid red;
+        height:70%;
+        margin-top:80px;
+        text-align: center;
+        button{
+        border-radius: 100px;
+        margin-top:90px;
+        }
+    }
+    .select{
+        // margin-top:50px;
+        padding-top:20px;
+     
+    }
+    .btndiv{
+        // border: 2px solid red;
+        text-align: center;
+        height:70%;
+        width:100%;
+        justify-content: center;
+        img{
+            text-align: center;
+            height: 20px;
+        }
+        // button{
+        //     margin-top: 50px;
+        // }
+    }
+    h5{
+        color:#014C9F;
+        padding-left:15px;
+    }
+    
+    }
+    
+

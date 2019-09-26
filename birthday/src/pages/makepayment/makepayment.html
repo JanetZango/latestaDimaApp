@@ -1,0 +1,28 @@
+<ion-content>  
+  <div class="top">
+    <!-- <img [src]="img" /> -->
+     </div>
+     <div class="bottom">
+        <p class="head">List of Associates</p>
+      <div *ngIf="  this.displayuserArr.length == 0 || this.displayuserArr.length == undefind" class="undefinedMess">
+          <img src="../../assets/empty2.png">
+          <div class="divP">
+            <p>No associates avaliable yet...</p>
+          </div>
+        </div>
+       <div class="div1" *ngFor="let a of displayuserArr">
+          <div class="imgdiv">
+              <img src="{{a.downloadurl}}">
+          </div>
+          <div class="condiv">
+              <p>{{a.name}}</p>
+              <div class="btndiv3">
+                  <button ion-button clear (click)="gottoRequest(a.name)">Make payment<ion-icon ios="ios-pricetag" md="md-pricetag"></ion-icon>
+                  </button>
+              </div>
+      
+          </div>
+       </div>
+     </div>
+</ion-content>
+

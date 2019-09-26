@@ -1,0 +1,27 @@
+<ion-content>
+  <div class="top">
+  
+  </div>
+  <div class="bottom">
+      <p class="head">Categories</p>
+      <div class="maindiv">
+          <div class="div1" (click)="makerequest()">
+              <img src="../../assets/images7.png">
+            <p class="card-title">Peer to Peer</p>
+          </div>
+          <div class="div2" (click)="gotoAssociate()">
+            <img src="../../assets/images10.png"> 
+            <p class="card-title">Market Place</p>
+          </div>
+        </div>
+  </div>
+
+ <ion-fab right bottom>
+    <button ion-fab color="light"><ion-icon ios="ios-menu" md="md-menu"></ion-icon></button>
+    <ion-fab-list side="left">
+      <button ion-fab (click)="profile()"><ion-icon ios="ios-person" md="md-person"></ion-icon></button>
+      <!-- <button ion-fab (click)="gotoContact()"><ion-icon ios="ios-contacts" md="md-contacts" ></ion-icon></button> -->
+      <button ion-fab (click)="gotoDnation()"> <ion-icon name="add" ></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>

@@ -1,0 +1,51 @@
+page-inbox {
+.main{
+    height:140px;
+    width:90%;
+    box-shadow: 2px 15px 20px -15px rgb(53, 53, 53);
+    display:flex;
+    margin:auto;
+    margin-top:60px;
+}
+
+.top{
+width:30%;
+height:100px;
+
+img{
+    height:90px;
+    padding:5px;
+}
+
+}
+.bottom{
+    width:70%;
+    height:100px;
+
+
+    p{
+        font-size:10px;
+    }
+}
+
+    h1{
+        font-family: 'Playfair Display', serif;
+        text-align: center;
+        padding-top:50px;
+    }
+    .container{
+        p{
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            color:#014b9f;
+            margin-top:-40px;
+        }
+   
+
+        img{
+        height: 350px;
+        width:600px;
+        }
+    }
+    
+}

@@ -1,0 +1,28 @@
+<ion-content>
+  <div class="seconddiv">
+    <button ion-button clear (click)="addRequest()">
+      <ion-icon ios="ios-checkmark" md="md-checkmark"></ion-icon>
+    </button>
+  </div>
+  <h3>add your request</h3>
+  <div class="inputs">
+    <ion-item id="item">
+      <ion-label>Purpose of funding</ion-label>
+      <ion-select id="select" [(ngModel)]="purpose">
+        <ion-option value="good">good</ion-option>
+        <ion-option value="kids">kids</ion-option>
+        <ion-option value="hospital">hospital</ion-option>
+        <ion-option value="clinic">clinic</ion-option>
+        <ion-option value="NGO org">NGO org</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-input placeholder="Enter company name" type="text" class="input" [(ngModel)]="cmpName"></ion-input>
+    <ion-input placeholder="Enter Amount" type="number" class="input" [(ngModel)]="Amount"></ion-input>
+    <ion-input placeholder="Enter the PO_no" type="number" class="input" [(ngModel)]="PO_no"></ion-input>
+    <h5>Supporting Documents:</h5>
+    <input id="file" type="file" accept="image/*" (change)="UploadProfilePic($event)">
+    <div class="btndiv">
+      <img id="click-upload" src="{{downloadurl}}" alt="">
+    </div>
+  </div>
+</ion-content>
