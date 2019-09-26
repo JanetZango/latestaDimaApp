@@ -9,6 +9,8 @@ import { InboxPage } from '../inbox/inbox';
 import { Stripe } from '@ionic-native/stripe';
 import { FCM } from '@ionic-native/fcm';
 import { ToastController } from 'ionic-angular';
+import { PopoverController } from 'ionic-angular';
+import { PopOverProfilePage } from '../pop-over-profile/pop-over-profile';
 
 declare var firebase;
 /**
@@ -47,7 +49,7 @@ export class ProfilePage {
   offer;
   insidekey;
   stripe_key = "pk_test_n47qQgW5Mf80nl9atiVSPSwC00uTrPCLVS"
-  constructor(public navCtrl: NavController, public navParams: NavParams, public dima: AdimaProvider, public loadingCtrl: LoadingController, public alertCtrl: AlertController, private stripe: Stripe,private fcm: FCM,public toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, public popoverCtrl: PopoverController,public navParams: NavParams, public dima: AdimaProvider, public loadingCtrl: LoadingController, public alertCtrl: AlertController, private stripe: Stripe,private fcm: FCM,public toastCtrl: ToastController) {
     this.displayProfile();
  
   }
@@ -58,6 +60,10 @@ export class ProfilePage {
 
 
    
+  }
+  presentPopover() {
+    const popover = this.popoverCtrl.create(PopOverProfilePage);
+    popover.present();
   }
 
   displayProfile() {
@@ -116,9 +122,7 @@ export class ProfilePage {
   }
 
 
-  edit() {
-    this.navCtrl.push(EditprofilePage)
-  }
+ 
   inbox() {
     this.navCtrl.push(InboxPage, { orgObject: this.arr });
   }
@@ -249,31 +253,6 @@ export class ProfilePage {
 
 
 
-  logOut() {
-    const confirm = this.alertCtrl.create({
-      title: 'Confirm',
-      message: 'Are you sure you want to log out?',
-      cssClass: "myAlert",
-      buttons: [
-        {
-          text: 'Yes',
-          handler: () => {
-            this.dima.logout().then(() => {
-              this.navCtrl.push(SigninPage, { out: 'logout' });
-            }, (error) => {
-              console.log(error.message);
-            })
-          }
-        },
-        {
-          text: 'No',
-          handler: () => {
-          }
-        }
-      ]
-    });
-    confirm.present();
-  }
 
 
 

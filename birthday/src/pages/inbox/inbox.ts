@@ -67,6 +67,9 @@ export class InboxPage {
     ;
    
   }
+  GoToProfile(){
+    this.navCtrl.pop();
+  }
 
   accepted() {
     this.dima.createinbox(this.user, this.name, this.downloadurl, this.offer, this.terms, this.Duration, this.key, this.insidekey).then((data) => {

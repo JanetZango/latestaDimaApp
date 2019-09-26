@@ -1,7 +1,11 @@
 <ion-content>
 
   <div class="top">
-
+    <ion-buttons end>
+      <button ion-button  class="threeDots" (click)="presentPopover($event)">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
   </div>
   <div class="bottom">
     <div *ngFor="let a of arr">
@@ -9,7 +13,7 @@
       <p class="fixFont">{{a.name}}</p>
       <!-- <p>{{a.email}}</p> -->
     </div>
-    <div padding>
+    <div class="ourSegment">
       <ion-segment [(ngModel)]="request">
         <ion-segment-button value="inbox" ngSelected="selected">
           Personal Details
@@ -62,7 +66,7 @@
               <p class="p"><b>Offer:</b> {{p.offer}}</p>
               <p class="p"> <b>Terms:</b> {{p.terms}}</p>
               <p class="p"> <b>Message:</b> {{p.message}}</p>
-              <button ion-button clear (click)="accepted()">make payment<ion-icon ios="ios-thumbs-up" md="md-thumbs-up">
+              <button ion-button clear color="secondary2" (click)="accepted()">make payment<ion-icon ios="ios-thumbs-up" md="md-thumbs-up">
                 </ion-icon></button>
 
             </div>
@@ -119,23 +123,13 @@
     </div>
 
 
-    <ion-fab top right (click)="logOut()">
-      <button ion-fab mini>
-        <ion-icon name="log-out"></ion-icon>
-      </button>
-    </ion-fab>
-
-    <ion-fab top left (click)="edit()">
-      <button ion-fab mini>
-        <ion-icon ios="ios-person" md="md-person"></ion-icon>
-      </button>
-    </ion-fab>
-
+  
+<!-- 
     <ion-fab bottom left (click)="inbox()">
       <button ion-fab mini>
         <ion-icon ios="ios-person" md="md-person"></ion-icon>
       </button>
-    </ion-fab>
+    </ion-fab> -->
   </div>
 
 </ion-content>

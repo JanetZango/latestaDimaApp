@@ -1,4 +1,10 @@
 <ion-content>
+        <ion-fab top left>
+                <button class="theFab" color="secondary2" ion-fab mini icon-only clear (click)="GoToProfile()">
+                  <ion-icon class="arrow" name="arrow-back" id="mark"></ion-icon>
+                </button>
+               
+              </ion-fab>
     <h1>Offering request</h1>
     <div *ngIf="  this.disOffers.length == 0 || this.disOffers.length == undefind" class="undefinedMess">
 
@@ -18,9 +24,9 @@
                 <p><b>MoneyOffered:</b>{{a.offer}}</p>
                 <p><b>Terms:</b>{{a.terms}}</p>
                 <div class="btn">
-                    <button ion-button clear (click)="removeImage(a.key)">Reject<ion-icon name="trash"></ion-icon>
+                    <button ion-button clear color="secondary2" (click)="removeImage(a.key)">Reject<ion-icon name="trash"></ion-icon>
                     </button>
-                    <button ion-button clear *ngIf="!a.hasAccepted" (click)="a.hasAccepted == true"
+                    <button ion-button color="secondary2" clear *ngIf="!a.hasAccepted" (click)="a.hasAccepted == true"
                         (click)="accepted()">Accept<ion-icon ios="ios-thumbs-up" md="md-thumbs-up">
                         </ion-icon></button>
                 </div>

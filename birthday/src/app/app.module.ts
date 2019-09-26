@@ -28,6 +28,7 @@ import { WindowProvider } from '../providers/window/window';
 import { EditprofilePage } from '../pages/editprofile/editprofile';
 import { InboxPage } from '../pages/inbox/inbox';
 import { LocalNotifications } from '@ionic-native/local-notifications';
+import { PopOverProfilePage } from '../pages/pop-over-profile/pop-over-profile';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
     SignupPage,
     SigupwithphonePage,
     EditprofilePage,
-    InboxPage
+    InboxPage,
+    PopOverProfilePage
   ],
   imports: [
     BrowserModule,
@@ -68,6 +70,7 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
     DonationPage,
     MakeRequestPage,
     MakepaymentPage,
+    PopOverProfilePage,
     ChoosePage,
     OfferPage,
     AssociatePage,
