@@ -1,9 +1,9 @@
-import { Component,Injectable } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 // import { WindowProvider } from '../../providers/window/window';
 import * as firebase from 'firebase';
 import { ToastController } from 'ionic-angular';
-
+import { LoadingController } from "ionic-angular";
 import { WindowProvider } from '../../providers/window/window';
 import { AlertController } from 'ionic-angular';
 import { ListPage } from '../list/list';
@@ -62,7 +62,7 @@ export class SigupwithphonePage {
   config: any
   name;
   password;
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController,public navParams: NavParams, public toastCtrl: ToastController,public win: WindowProvider) {
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController, public navParams: NavParams, public toastCtrl: ToastController, public win: WindowProvider,public loadingCtrl: LoadingController,) {
   }
 
   ionViewDidEnter() {
@@ -100,7 +100,7 @@ export class SigupwithphonePage {
       .then(result => {
         this.windowRef.confirmationResult = result;
         this.arr.push(result)
-        console.log('sms conf' ,result)
+        console.log('sms conf', result)
         const alert = this.alertCtrl.create({
           cssClass: "myAlert",
           subTitle: 'We have sent you an Sms to verfity your Phone Number',
@@ -109,7 +109,7 @@ export class SigupwithphonePage {
         alert.present();
 
       })
-      .catch(error =>{
+      .catch(error => {
         const alert = this.alertCtrl.create({
           cssClass: "myAlert",
           subTitle: error.message,
@@ -117,31 +117,38 @@ export class SigupwithphonePage {
         });
         alert.present();
       });
-    
+
   }
 
 
   verifyLoginCode() {
     this.windowRef.confirmationResult.confirm(this.verificationCode).then(result => {
-        var user = firebase.auth().currentUser
-        firebase.database().ref("App_Users/" + user.uid).set({
-          name:this.name,
-          downloadurl: "../../assets/download.png",
-          phoneNumber: this.phoneNumber.e164,
-          password:this.password
+      var user = firebase.auth().currentUser
+      firebase.database().ref("App_Users/" + user.uid).set({
+        name: this.name,
+        downloadurl: "../../assets/download.png",
+        ContactDetails: this.phoneNumber.e164,
+        password: this.password
 
-        })
-        this.user = result.user;
+      })
+      this.user = result.user;
+      let loading = this.loadingCtrl.create({
+        spinner: 'bubbles',
+        content: 'Signing in...',
+        duration: 40000
+      });
+      loading.present();
+      this.navCtrl.push(ListPage)
+    })
+      .catch(error => {
         const alert = this.alertCtrl.create({
-          subTitle: 'You have successfully logged in',
+          subTitle: error,
           buttons: ['OK']
         });
-        alert.present();
-        this.navCtrl.push(ListPage)
-      })
-      .catch(error => console.log(error, "Incorrect code entered?"));
+        alert.present()
+      });
   }
-  gotoSignin(){
+  gotoSignin() {
     this.navCtrl.push(SigninPage)
   }
 
