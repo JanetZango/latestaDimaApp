@@ -29,6 +29,7 @@ import { EditprofilePage } from '../pages/editprofile/editprofile';
 import { InboxPage } from '../pages/inbox/inbox';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { PopOverProfilePage } from '../pages/pop-over-profile/pop-over-profile';
+import { ConfirmationPage } from '../pages/confirmation/confirmation';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { PopOverProfilePage } from '../pages/pop-over-profile/pop-over-profile';
     SigupwithphonePage,
     EditprofilePage,
     InboxPage,
-    PopOverProfilePage
+    PopOverProfilePage,
+    ConfirmationPage
   ],
   imports: [
     BrowserModule,
@@ -77,7 +79,8 @@ import { PopOverProfilePage } from '../pages/pop-over-profile/pop-over-profile';
     ShowcontactsPage,
     ProfilePage,
     SignupPage,
-    SigupwithphonePage
+    SigupwithphonePage,
+    ConfirmationPage
   ],
   providers: [
     StatusBar,

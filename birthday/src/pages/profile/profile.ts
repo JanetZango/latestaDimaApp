@@ -54,13 +54,11 @@ export class ProfilePage {
  
   }
  
-  ionViewDidEnter() {
-    this.getcreateinbox(); 
-    this.getcreateinbox2();
-
-
+  // ionViewDidEnter() {
+  //   this.getcreateinbox(); 
+  //   this.getcreateinbox2();
    
-  }
+  // }
   presentPopover() {
     const popover = this.popoverCtrl.create(PopOverProfilePage);
     popover.present();
@@ -138,6 +136,11 @@ export class ProfilePage {
   }
 
   ionViewDidLoad() {
+
+    this.getcreateinbox(); 
+    this.getcreateinbox2();
+
+
     this.dima.retrivePayment().then((data: any) => {
       this.paymentArr = data
       this.paymentArr.length = 0;

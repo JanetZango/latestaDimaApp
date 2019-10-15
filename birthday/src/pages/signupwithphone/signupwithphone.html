@@ -6,8 +6,8 @@
   <p class="header">aDima</p>
   <div id="recaptcha-container"></div>
   <div class="theCard">
-        <ion-input type="text" id="anim1" placeholder="username" [(ngModel)]="name" ></ion-input>
-        <ion-input type="text" id="anim1" placeholder="password" [(ngModel)]="password" ></ion-input>
+        <ion-input type="text" id="anim1" placeholder="Username" [(ngModel)]="name" ></ion-input>
+        <ion-input type="text" id="anim1" placeholder="Password" [(ngModel)]="password" ></ion-input>
   <div class="inoutdiv">
       <input type="text" [(ngModel)]="phoneNumber.country" class="input2" placeholder="27" maxlength="2">
       <input type="text" [(ngModel)]="phoneNumber.area" class="input2" placeholder="949" maxlength="3">
@@ -21,21 +21,15 @@
   <div class="moveCont2">
       <button ion-button clear (click)="gotoSignin()">Sign In</button>
   </div> 
-  <div >
+  <div *ngIf="this.win.windowRef.confirmationResult">
   <p class="font" for="code">Enter your Verification Code Here</p><br>
   <div class="input3">
-  <input type="text" name="code" class="input2" [(ngModel)]="verificationCode">
+  <input type="text" id="verifycode" name="code" class="input2" [(ngModel)]="verificationCode">
   </div>
   <div class="divbtn">
       <button ion-button (click)="verifyLoginCode()">Verify</button>
   </div>
 
-  </div>
-
-  <div *ngIf="user">
-    You have successfully logged in with your phone number!
-
-    UserId: {{ user?.uid }}
   </div>
 </div>
 </ion-content>

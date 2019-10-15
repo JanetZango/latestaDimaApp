@@ -16,7 +16,7 @@ page-editprofile {
     }
     .item{
         border-radius: 50px;
-        background-color:  #014C9F;
+        background-color:  #00103F;
         color: white;
         ::-webkit-input-placeholder{
             color: rgb(199, 199, 199);
@@ -33,7 +33,13 @@ page-editprofile {
     .fileChooser{
         position: relative;
         top: 40px;
+        
     }
+    // .containerdiv{
+    //     border:solid red;
+    //     width: 100%;
+    //     background-color:  #00103F;
+    // }
     .round{
         width: 180px;
         height: 180px;
@@ -43,6 +49,7 @@ page-editprofile {
         box-shadow: 0 2px 15px grey;
         position: relative;
         top: 50px;
+        // border:solid red;
     }
     .picture{
         width: 180px;

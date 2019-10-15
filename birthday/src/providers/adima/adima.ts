@@ -467,6 +467,9 @@ export class AdimaProvider {
   SignIn(email, password) {
     return firebase.auth().signInWithEmailAndPassword(email, password);
   }
+  SignInNumber(number, password) {
+    return firebase.auth().signInWithPhoneNumber(number, password);
+  }
 
 
 

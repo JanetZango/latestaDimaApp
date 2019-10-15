@@ -2,15 +2,15 @@ page-donation {
     h3{
         text-align: center;
         text-transform: capitalize;
-        color:#014C9F;
+        color:#00103F;
         padding-top:50px;
     }
-     .alert-head{
-        color: #014C9F;
+     .alert-md .alert-head{
+        color: #00103F;
     }
     
     .input{
-        background-color: #014C9F;
+        background-color: #00103F;
         width:85%;
         margin:25px auto;
         border-radius: 100px;
@@ -19,13 +19,13 @@ page-donation {
         
     }
     #item{
-        border:2px solid #014C9F;
+        border:2px solid #00103F;
         width:85%;
         margin:0px auto;
         border-radius: 30px;
     }
     .item-block{
-        border:2px solid #014C9F;
+        border:2px solid #00103F;
     }
     
     #click-upload{
@@ -60,9 +60,8 @@ page-donation {
         margin-top:90px;
         }
     }
-    .select{
-        // margin-top:50px;
-        padding-top:20px;
+    #select{
+        animation: 1.2s slideInDown;
      
     }
     .btndiv{

@@ -62,6 +62,7 @@ export class SigupwithphonePage {
   config: any
   name;
   password;
+  email;
   constructor(public navCtrl: NavController, public alertCtrl: AlertController, public navParams: NavParams, public toastCtrl: ToastController, public win: WindowProvider,public loadingCtrl: LoadingController,) {
   }
 
@@ -86,7 +87,7 @@ export class SigupwithphonePage {
         console.log(widgetId)
       });
 
-    }, 2000);
+    }, 1000);
 
   }
 
@@ -128,7 +129,11 @@ export class SigupwithphonePage {
         name: this.name,
         downloadurl: "../../assets/download.png",
         ContactDetails: this.phoneNumber.e164,
-        password: this.password
+        password: this.password,
+        email: "",
+        token: "",
+        AccountNo: "",
+        Address: "",
 
       })
       this.user = result.user;

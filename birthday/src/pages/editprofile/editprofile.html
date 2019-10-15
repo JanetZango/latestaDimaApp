@@ -1,33 +1,34 @@
-
 <ion-content padding class="content">
   <ion-fab top left>
     <button class="theFab" color="secondary2" ion-fab mini icon-only clear (click)="GoToProfile()">
       <ion-icon class="arrow" name="arrow-back" id="mark"></ion-icon>
     </button>
-   
+
   </ion-fab>
- 
+
   <ion-fab top right>
-    <button class="theFab" color="secondary2" ion-fab mini icon-only clear  (click)="uploadPicture()">
-      <ion-icon name="checkmark"class="arrow"></ion-icon>
+    <button class="theFab" color="secondary2" ion-fab mini icon-only clear (click)="uploadPicture()">
+      <ion-icon class="arrow" ios="ios-create" md="md-create"></ion-icon>
     </button>
   </ion-fab>
 
-  <div class="round">
-    <label for="file">
-    <img class="picture" src="{{downloadurl}}" imageViewer>
-    </label>
-  </div>
-  <div class="fileChooser">
-    
-    <div>
-      <label for="file" id="cam">
-        <ion-icon class="Add"  md="md-create-circle"></ion-icon>
+  <div class="containerdiv">
+    <div class="round">
+      <label for="file">
+        <img class="picture" src="{{downloadurl}}" imageViewer>
       </label>
-      <input id="file" type="file" accept="image/*" (change)="insertpic($event)">
-      <h1>{{name}}</h1>
+    </div>
+    <div class="fileChooser">
+      <div>
+        <label for="file" id="cam">
+          <ion-icon class="Add" md="md-create-circle"></ion-icon>
+        </label>
+        <input id="file" type="file" accept="image/*" (change)="insertpic($event)">
+        <h1>{{name}}</h1>
+      </div>
     </div>
   </div>
+
   <br>
 
   <div class="list">
@@ -39,30 +40,28 @@
     </ion-item><br>
     <ion-item no-lines class="item">
       <ion-label>
-        <ion-icon name="person"></ion-icon>
+        <ion-icon name="card"></ion-icon>
       </ion-label>
       <ion-input type="text" [value]="Address" [(ngModel)]="Address" placeholder="Enter bankName"></ion-input>
     </ion-item><br>
 
     <ion-item no-lines class="item">
       <ion-label>
-        <ion-icon name="AccountNo"></ion-icon>
+        <ion-icon name="card"></ion-icon>
       </ion-label>
       <ion-input type="number" [value]="AccountNo" [(ngModel)]="AccountNo" placeholder="Enter AccountNo"></ion-input>
     </ion-item><br>
     <ion-item no-lines class="item">
       <ion-label>
-        <ion-icon name="calContactDetailsl"></ion-icon>
+        <ion-icon name="contact"></ion-icon>
       </ion-label>
-      <ion-input type="number" [value]="ContactDetails" [(ngModel)]="ContactDetails" placeholder="ContactDetails"></ion-input>
+      <ion-input type="number" [value]="ContactDetails" [(ngModel)]="ContactDetails" placeholder="ContactDetails">
+      </ion-input>
     </ion-item><br>
-  
+
 
   </div>
 
 
- 
+
 </ion-content>
-
-
-

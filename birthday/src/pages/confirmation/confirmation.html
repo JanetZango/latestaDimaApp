@@ -1,15 +1,35 @@
-<!--
-  Generated template for the ConfirmationPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-  <ion-navbar>
-    <ion-title>confirmation</ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding>
-
-</ion-content>
+<ion-content class="content">
+    <div class="move">
+      <div class="divImage">
+        <img src="../../assets/icon.png">
+      </div>
+      <p>aDima</p>
+      <div id="recaptcha-container"></div>
+      <div class="theCard">
+        <ion-input placeholder="Phonenumber" id="anim1" name="phonenumber" #phonenumber="ngModel" type="phonenumber" ngModel required></ion-input>
+        <span style="color: red" *ngIf="!phonenumber.valid && phonenumber.touched" class="help-block">Please enter your Phonenumber</span>
+        <ion-input placeholder="Password" id="anim1" name="password" #password="ngModel" type="password"
+          class="user-input" required ngModel></ion-input>
+        <span style="color: red" *ngIf="!password.valid && password.touched" class="help-block">Please enter
+          password</span>
+      </div>
+      <div class="moveCont">
+        <button class="btnSign" id="anim2" ion-button (click)="signIn(phonenumber.value,password.value)">sign in</button>
+      </div>
+      <div class="moveCont2">
+        <button ion-button clear id="forgotPassword" (click)="forgotpassword()">forgot password?</button>
+      </div>
+      <div class="moveCont2">
+        <button class="changebtn" ion-button clear (click)="gotoRegister()">You dont have an account?
+          &nbsp;<b>Sign Up</b>
+        </button>
+      </div>
+      <div class="moveCont2">
+          <button class="changebtn" ion-button clear (click)="gotoRegister()">OR You want to login using Email?
+            &nbsp;<b>Sign in</b>
+          </button>
+        </div>
+  
+    </div>
+  
+  </ion-content>

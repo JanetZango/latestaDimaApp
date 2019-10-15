@@ -8,6 +8,8 @@ import { ListPage } from '../list/list';
 // import SignupPage from '../signup/signup';
 import { ChoosePage } from '../choose/choose';
 
+import { ConfirmationPage } from '../confirmation/confirmation';
+
 declare var firebase;
 /**
  * Generated class for the SignInPage page.
@@ -82,7 +84,9 @@ password;
   }
 
 
-
+  gotoRegister2(){
+    this.navCtrl.push(ConfirmationPage)
+  }
 
   forgotpassword(PlaceObject: object) {
     return new Promise((resolve, reject) => {

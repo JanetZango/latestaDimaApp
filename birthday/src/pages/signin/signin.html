@@ -13,7 +13,7 @@
         password</span>
     </div>
     <div class="moveCont">
-      <button class="btnSign" id="anim2" ion-button (click)="SignIn(email.value,password.value)">SIGN IN</button>
+      <button class="btnSign" id="anim2" ion-button (click)="SignIn(email.value,password.value)">sign in</button>
     </div>
     <div class="moveCont2">
       <button ion-button clear id="forgotPassword" (click)="forgotpassword()">forgot password?</button>
@@ -23,6 +23,11 @@
         &nbsp;<b>Sign Up</b>
       </button>
     </div>
+    <div class="moveCont2">
+        <button class="changebtn" ion-button clear (click)="gotoRegister2()">OR You want to login using phonenumber?
+          &nbsp;<b>Sign in</b>
+        </button>
+      </div>
 
   </div>
 

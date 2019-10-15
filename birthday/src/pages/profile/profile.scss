@@ -5,7 +5,7 @@ page-profile {
     }
     .threeDots{
         font-size: 20px;
-        // border: 2px solid red;
+        border: solid transparent;
         width: 40px;
         background-color: transparent;
         margin-right: -5px;
@@ -52,12 +52,35 @@ page-profile {
     }
     .messDiv2{
         // border-radius: 10px;
+        height:130px;
+        width:350px;
+        margin:5px auto;
+        box-shadow: 2px 15px 20px -15px rgb(53, 53, 53);
+        display:flex;
+        padding-top:15px; 
+        padding-left:10px;
+       
+      
+      img{
+         border-radius: 100px;
+         object-fit: cover;
+        
+      }
+      button{
+          height:20px;
+          border-radius: 10px;
+
+      }
+    }
+    .messDiv4{
+        // border-radius: 10px;
         height:120px;
         width:350px;
         margin:5px auto;
         box-shadow: 2px 15px 20px -15px rgb(53, 53, 53);
         display:flex;
-        padding-left:10px; 
+        padding-top:15px; 
+        // padding-left:5px;
        
       
       img{
@@ -78,7 +101,7 @@ page-profile {
         height:77px;
         width:350px;
         margin:5px auto;
-        box-shadow: 2px 15px 20px -15px rgb(53, 53, 53);
+        box-shadow: 4px 15px 20px -15px rgb(53, 53, 53);
         display:flex;
         padding-left:10px;
       
@@ -101,13 +124,19 @@ page-profile {
         padding-top:20px;
     }
     .fixFont{
-        font-size: 2em;
+        font-size: 2.5em;
+        // border:solid red;
+        text-align: center;
         font-family: 'Playfair Display', serif;
+        text-transform: capitalize;
+         color:#014b9f;
+        margin-top:280px;
+
     }
 
     
     .conMess{
-        padding-top: 10px;
+        padding-top: 30px;
     }
 
     .imgdi2v{
@@ -170,7 +199,7 @@ page-profile {
     }
     .undefinedMess{
     //   border:2px solid red;  
-      margin-top:-25px;
+      margin-top:-20px;
         // border:2px solid red;
       text-align: center;
       p{
@@ -185,26 +214,44 @@ page-profile {
         color:gold
     }
     .top{
-        height:40%;
+        height:60%;
+        width:100%;
+        // border:solid red;
         // background-color: #014c9f;
-        background-image: linear-gradient(rgba(245, 245, 245, 0.585), rgb(255, 255, 255)), url('../../assets/blue.jpg');
+        // background-image: linear-gradient(rgba(245, 245, 245, 0.585), rgb(255, 255, 255)), url('../../assets/blue.jpg');
         background-size:cover;
         object-fit: cover;
         //   background-attachment: fixed;
           background-repeat: no-repeat;
         // border-bottom-left-radius: 100px;
+        img{
+            // border-radius: 100%;
+            width:100%;
+            height:380px;
+            object-fit: cover;
 
+        }
+
+    }
+
+    .gradient{
+        // border:solid red;
+        height:390px;
+        width: 100%;
+        // height:100%;
+        background: linear-gradient(rgba(255, 255, 255, 0.04),white);
+        position: absolute;
     }
     .bottom{
         
-            height:60%;
-            margin-top:-80px;
+            height:40%;
+            margin-top:10px;
             text-align: center;
             // background-color: green;
         img{
-            border-radius: 100%;
-            width:170px;
-            height:170px;
+            // border-radius: 100%;
+            width:100%;
+            height:200px;
             object-fit: cover;
 
         }

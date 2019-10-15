@@ -1,20 +1,21 @@
-<ion-content>
-
+<ion-content *ngFor="let a of arr">
   <div class="top">
-    <ion-buttons end>
-      <button ion-button  class="threeDots" (click)="presentPopover($event)">
-        <ion-icon name="more"></ion-icon>
-      </button>
-    </ion-buttons>
+    <div class="gradient">
+        <ion-buttons end>
+            <button ion-button  class="threeDots" (click)="presentPopover($event)">
+              <ion-icon name="more"></ion-icon>
+            </button>
+          </ion-buttons>
+        <p class="fixFont">{{a.name}}</p>
+        <!-- <p>{{a.email}}</p> -->
+      </div>
+    <img  src={{a.downloadurl}}>
   </div>
   <div class="bottom">
-    <div *ngFor="let a of arr">
-      <img class="img" src={{a.downloadurl}}>
-      <p class="fixFont">{{a.name}}</p>
-      <!-- <p>{{a.email}}</p> -->
-    </div>
+    
+
     <div class="ourSegment">
-      <ion-segment [(ngModel)]="request">
+      <ion-segment color="secondary4" [(ngModel)]="request">
         <ion-segment-button value="inbox" ngSelected="selected">
           Personal Details
         </ion-segment-button>

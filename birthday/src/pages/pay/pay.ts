@@ -66,7 +66,7 @@ export class PayPage {
     const prompt = this.alertCtrl.create({
       cssClass: "myAlert",
       title: 'Payment',
-      message: "Enter your details to pay the payment",
+      message: "Enter your details to make payment",
       inputs: [
         {
           name: 'number',
