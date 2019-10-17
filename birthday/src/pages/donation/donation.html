@@ -6,6 +6,10 @@
   </div>
   <h3>add your request</h3>
   <div class="inputs">
+    <ion-input placeholder="Enter the PO_no" type="number" class="input" [(ngModel)]="PO_no"></ion-input>
+    <ion-input placeholder="Enter the Supplier_no" type="text" class="input" [(ngModel)]="Supplier_no"></ion-input>
+    <ion-input placeholder="Enter Company CSD_no" type="number" class="input" [(ngModel)]="CSD_no"></ion-input>
+    <ion-input placeholder="Enter Amount" type="number" class="input" [(ngModel)]="Amount"></ion-input>
     <ion-item id="item">
       <ion-label>Purpose of funding</ion-label>
       <ion-select id="select" [(ngModel)]="purpose">
@@ -16,9 +20,55 @@
         <ion-option value="NGO org">NGO org</ion-option>
       </ion-select>
     </ion-item>
-    <ion-input placeholder="Enter company name" type="text" class="input" [(ngModel)]="cmpName"></ion-input>
-    <ion-input placeholder="Enter Amount" type="number" class="input" [(ngModel)]="Amount"></ion-input>
-    <ion-input placeholder="Enter the PO_no" type="number" class="input" [(ngModel)]="PO_no"></ion-input>
+    <br>
+    <ion-item id="item">
+      <ion-label>Select Province</ion-label>
+      <ion-select id="select" [(ngModel)]="province">
+        <ion-option value="Eastern Cape">Eastern Cape</ion-option>
+        <ion-option value="Free State">Free State</ion-option>
+        <ion-option value="Gauteng">Gauteng</ion-option>
+        <ion-option value="Limpopo">Limpopo</ion-option>
+        <ion-option value="North West">North West</ion-option>
+        <ion-option value="Northen Cape">Northen Cape</ion-option>
+        <ion-option value="Western Cape">Western Cape</ion-option>
+        <ion-option value="National">National</ion-option>
+        <ion-option value="KwaZulu-Natal">KwaZulu-Natal</ion-option>
+      </ion-select>
+    </ion-item>
+    <br>
+    <ion-item id="item">
+      <ion-label>Select Department</ion-label>
+      <ion-select id="select" [(ngModel)]="department">
+        <ion-option value="!kail Gabrib Local Municipality">!kail Gabrib Local Municipality</ion-option>
+        <ion-option value="Academy of Science of South Africa">Academy of Science of South Africa</ion-option>
+        <ion-option value="Abaqulusi Local Municipality">Abaqulusi Local Municipality</ion-option>
+        <ion-option value="Accounting Standards Board">Accounting Standards Board</ion-option>
+        <ion-option value="Africa Institute of South Africa">Africa Institute of South Africat</ion-option>
+        <ion-option value="African Exploration Mining Finance Corparation Soc Ltd">African Exploration Mining Finance Corparation Soc Ltd</ion-option>
+        <ion-option value="African  Renaissance and International Cooperation Fund">African  Renaissance and International Cooperation Fund</ion-option>
+        <ion-option value="Agency to the Northern Cape Economic Development(NCEDA)">Agency to the Northern Cape Economic Development(NCEDA)</ion-option>
+        <ion-option value="Agricultural Research Council">Agricultural Research Council</ion-option>
+        <ion-option value="Agricultural Sector Education and Training Authority">Agricultural Sector Education and Training Authority</ion-option>
+        <ion-option value="Agricultural Forestry Council">Agricultural Forestry Council</ion-option>
+        <ion-option value="Agriculture, Research Fisheries">Agriculture, Research Fisheries</ion-option>
+        <ion-option value="Air Chefs SOC Ltd">Air Chefs SOC Ltd</ion-option>
+        <ion-option value="Air Traffic and Navigation Services Company Limited">Air Traffic and Navigation Services Company Limited</ion-option>
+        <ion-option value="Airports Company of South Africa Limited">Airports Company of South Africa Limited</ion-option>
+        <ion-option value="Airports Of South Africa">Airports Of South Africa</ion-option>
+        <ion-option value="Alexkor Limited">Alexkor Limited</ion-option>
+        <ion-option value="Alfred Duma Local Municipality">Alfred Duma Local Municipality</ion-option>
+        <ion-option value="Alfred Nzo District Municipality">Alfred Nzo District Municipality</ion-option>
+        <ion-option value="Amahlathi Local Municipality">Amahlathi Local Municipality</ion-option>
+        <ion-option value="Amathole  District Municipality">Amathole  District Municipality</ion-option>
+        <ion-option value="Amatola Water Board">Amatola Water Board</ion-option>
+        <ion-option value="ARMSCOR">ARMSCOR</ion-option>
+        <ion-option value="Arts and Culture">Arts and Culture</ion-option>
+        <ion-option value="Artscape">Artscape</ion-option>
+        <ion-option value="Automotive Industry Development Centre">Automotive Industry Development Centre</ion-option>
+        <ion-option value="AUTOPAX">AUTOPAX</ion-option>
+        
+      </ion-select>
+    </ion-item>
     <h5>Supporting Documents:</h5>
     <input id="file" type="file" accept="image/*" (change)="UploadProfilePic($event)">
     <div class="btndiv">

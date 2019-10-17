@@ -1,22 +1,26 @@
 <ion-content>
-  <div class="divImage">
-    <img src="{{downloadurl}}">
+  <div class="top">
+      <div class="divImage">
+          <img src="{{downloadurl}}" imageViewer>
+        </div>
   </div>
-  <div class="maindiv">
-    <a href="www.google.com">Website link</a>
-    <div class="movcont">
-      <b>Purpose:</b>
-      <p>{{purpose}}</p>
-      <b>Amount:</b>
-      <p>{{Amount}}</p>
-      <b>PO_no:</b>
-      <p>{{PO_no}}</p>
-      <b>Balance:</b>
-      <p>{{balance}}</p>
-      <b>Offer:</b>
-      <p>{{offer}}</p>
+<div class="bottom"> 
+    <h3>{{department}}</h3>
+    <div class="maindiv">
+      <div class="movcont">
+        <p><b>Supplier_no:</b>{{Supplier_no}}</p>
+        <p><b>Company CSD_no:</b>{{CSD_no}}</p>
+        <p> <b>PO_no:</b>{{PO_no}}</p>
+        <p><b>Purpose:</b>{{purpose}}</p>
+        <p><b>Amount Requested:</b>R{{Amount}}</p>
+        <p><b>Balance:</b>{{balance}}</p>
+        <p><b>Offer:</b>{{offer}}</p>
+        <p><b>Province:</b>{{province}}</p>
+  
+      </div>
+  
     </div>
-   
-  </div>
+</div>
+ 
 
 </ion-content>

@@ -41,6 +41,10 @@ export class MakeRequestPage {
   purpose;
   PO_no ;
   outstanding;
+  department;
+  province;
+  Supplier_no;
+  CSD_no;
   constructor(public navCtrl: NavController, public navParams: NavParams, public dima: AdimaProvider, public alertCtrl: AlertController, public toastCtrl: ToastController) {
     this.makeRequest.push(this.navParams.get('orgObject'));
     console.log(this.makeRequest);
@@ -50,6 +54,11 @@ export class MakeRequestPage {
     this.downloadurl = this.makeRequest[0].downloadurl
     this.purpose = this.makeRequest[0].purpose
     this.offer = this.makeRequest[0].offer
+    this.CSD_no = this.makeRequest[0].CSD_no
+    this.Supplier_no = this.makeRequest[0].Supplier_no
+    this.province = this.makeRequest[0].province
+    this.department = this.makeRequest[0].department
+
     console.log(this.Amount, this.offer, this.purpose)
   }
 

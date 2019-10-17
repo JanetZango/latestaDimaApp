@@ -51,7 +51,8 @@ export class ProfilePage {
   stripe_key = "pk_test_n47qQgW5Mf80nl9atiVSPSwC00uTrPCLVS"
   constructor(public navCtrl: NavController, public popoverCtrl: PopoverController,public navParams: NavParams, public dima: AdimaProvider, public loadingCtrl: LoadingController, public alertCtrl: AlertController, private stripe: Stripe,private fcm: FCM,public toastCtrl: ToastController) {
     this.displayProfile();
- 
+    this.getcreateinbox(); 
+    this.getcreateinbox2();
   }
  
   // ionViewDidEnter() {
@@ -137,8 +138,8 @@ export class ProfilePage {
 
   ionViewDidLoad() {
 
-    this.getcreateinbox(); 
-    this.getcreateinbox2();
+    // this.getcreateinbox(); 
+    // this.getcreateinbox2();
 
 
     this.dima.retrivePayment().then((data: any) => {

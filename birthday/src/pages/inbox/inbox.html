@@ -26,9 +26,9 @@
                 <div class="btn">
                     <button ion-button clear color="secondary2" (click)="removeImage(a.key)">Reject<ion-icon name="trash"></ion-icon>
                     </button>
-                    <button ion-button color="secondary2" clear *ngIf="!a.hasAccepted" (click)="a.hasAccepted == true"
-                        (click)="accepted()">Accept<ion-icon ios="ios-thumbs-up" md="md-thumbs-up">
-                        </ion-icon></button>
+                    <button ion-button color="secondary2" class="theStatements" clear *ngIf="!a.hasAccepted" (click)="a.hasAccepted = true"
+                    (click)="accepted()">Accept<ion-icon ios="ios-thumbs-up" md="md-thumbs-up">
+                    </ion-icon></button>
                 </div>
 
             </div>

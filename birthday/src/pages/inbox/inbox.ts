@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, style  } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AdimaProvider } from '../../providers/adima/adima';
 import { AlertController } from "ionic-angular";
 import { ToastController } from 'ionic-angular';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 /**
  * Generated class for the InboxPage page.
  *
@@ -32,7 +33,8 @@ export class InboxPage {
   downloadurl1;
   hasAccepted = true;
   insidekey;
-  pathkey
+  pathkey;
+  message ="You have accepted this offer"
   constructor(public navCtrl: NavController, public navParams: NavParams, public dima: AdimaProvider, public alertCtrl: AlertController, public toastCtrl: ToastController) {
     this.makeRequest = this.navParams.get('orgObject');
     console.log(this.makeRequest)
@@ -41,6 +43,11 @@ export class InboxPage {
     this.downloadurl = this.makeRequest[0].downloadurl
     console.log(this.key)
 
+  }
+
+
+  ngOnInit() {
+  // this.ifOrderYes() 
   }
 
   displayProfile() {
@@ -71,15 +78,26 @@ export class InboxPage {
     this.navCtrl.pop();
   }
 
+
+  ifOrderYes() {
+    if (this.hasAccepted = true) {
+      let btnOrder = document.getElementsByClassName('theStatements') as HTMLCollectionOf<HTMLElement>
+      btnOrder[0].style.display = "none";
+    }
+    }
+
   accepted() {
     this.dima.createinbox(this.user, this.name, this.downloadurl, this.offer, this.terms, this.Duration, this.key, this.insidekey).then((data) => {
       this.dima.createinbox2(this.key, this.downloadurl1, this.person, this.offer, this.terms, this.Duration, this.user, this.insidekey).then((data) => {
         this.dima.updateoffereddonation(this.key,this.offer,this.insidekey).then((data)=>{
+          this.dima.updateofferedmessage(this.key,this.message,this.insidekey)
           console.log(data)
         })    
       })
     })
   }
+
+  
 
   removeImage(user) {
     console.log(user);

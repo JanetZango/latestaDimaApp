@@ -5,6 +5,7 @@ import { AlertController } from "ionic-angular";
 import { firestore } from 'firebase';
 
 
+
 declare var firebase;
 /*
   Generated class for the ADimaProvider provider.
@@ -124,12 +125,10 @@ export class AdimaProvider {
         name: name,
         downloadurl: downloadurl,
         message: "Has made a payment"
-
-
-
       })
     })
   }
+
 
   updateOffer(offer, token, id, user, name, downloadurl) {
     console.log(id)
@@ -259,7 +258,7 @@ export class AdimaProvider {
     })
   }
 
-  addRequestFunding(id, Amount, purpose, PO_no, downloadurl, name,companyName) {
+  addRequestFunding(id, Amount, purpose, PO_no, downloadurl, name,province,department,Supplier_no,CSD_no) {
     console.log(id)
     return new Promise((accpt, rej) => {
       console.log(id)
@@ -269,9 +268,13 @@ export class AdimaProvider {
         PO_no: PO_no,
         downloadurl: downloadurl,
         name: name,
-        companyName:companyName,
         offer: 0,
-        balance: 0
+        balance: 0,
+        province:province,
+        department:department,
+        Supplier_no:Supplier_no,
+        CSD_no:CSD_no
+
       })
     })
   }
@@ -345,6 +348,12 @@ export class AdimaProvider {
     })
   }
 
+
+
+
+
+
+
   retrieveAddedRequest() {
     return new Promise((accpt, rej) => {
       var user = firebase.currentUser;
@@ -374,7 +383,10 @@ export class AdimaProvider {
                 offer: requestDetails2[keys2[z]].offer,
                 purpose: requestDetails2[keys2[z]].purpose,
                 name: requestDetails2[keys2[z]].name,
-                companyName: requestDetails2[keys2[z]].companyName,
+                CSD_no: requestDetails2[keys2[z]].CSD_no,
+                Supplier_no: requestDetails2[keys2[z]].Supplier_no,
+                department: requestDetails2[keys2[z]].department,
+                province: requestDetails2[keys2[z]].province,
                 key: keys2[z],
                 user: keys1[x]
               }
@@ -392,6 +404,42 @@ export class AdimaProvider {
     })
   }
 
+  retrieveAddedRequestIndividual() {
+    return new Promise((accpt, rej) => {
+      let user = firebase.auth().currentUser;
+      this.getaddedRequests.length = 0;
+          firebase.database().ref("AddRequestFundings/" + user.uid).on("value", (data2) => {
+            let requestDetails2 = data2.val();
+            console.log(requestDetails2)
+            let keys2 = Object.keys(requestDetails2)
+            console.log(keys2)
+            this.getaddedRequests.length = 0;
+            for (var z = 0; z < keys2.length; z++) {
+              let obj = {
+                Amount: requestDetails2[keys2[z]].Amount,
+                PO_no: requestDetails2[keys2[z]].PO_no,
+                balance: requestDetails2[keys2[z]].balance,
+                downloadurl: requestDetails2[keys2[z]].downloadurl,
+                offer: requestDetails2[keys2[z]].offer,
+                purpose: requestDetails2[keys2[z]].purpose,
+                name: requestDetails2[keys2[z]].name,
+                companyName: requestDetails2[keys2[z]].companyName,
+                key: keys2[z],
+                user:user.uid
+               
+              }
+              console.log(obj)
+              this.getaddedRequests.push(obj)
+              console.log(this.getaddedRequests)
+            }
+
+
+          })
+          accpt(this.getaddedRequests)
+
+        })
+  }
+
   makeOffer(key, offer, terms, name, userkey, downloadurl,Duration,insidekey) {
     return new Promise((accpt, rej) => {
         console.log(key)
@@ -403,6 +451,7 @@ export class AdimaProvider {
         downloadurl: downloadurl,
         Duration:Duration,
         hasAccepted:false,
+        message:"",
         insidekey:insidekey
       })
     })
@@ -496,6 +545,24 @@ export class AdimaProvider {
           Address: Address,
           AccountNo: AccountNo,
           ContactDetails: ContactDetails,
+
+        });
+      })
+    })
+  }
+
+
+  updaterequest(Amount, PO_no, companyName, downloadurl, purpose,key){
+    return new Promise((pass, fail) => {
+      this.ngzone.run(() => {
+        var user = firebase.auth().currentUser
+        console.log(user.uid)
+        firebase.database().ref("AddRequestFundings/" + user.uid + "/" + key).update({
+          Amount: Amount,
+          PO_no: PO_no,
+          companyName: companyName,
+          downloadurl: downloadurl,
+          purpose: purpose
 
         });
       })
@@ -881,5 +948,18 @@ export class AdimaProvider {
       })
     })
   }
+
+  updateofferedmessage(userkeyPerson,message,insidekey){
+    return new Promise((pass, fail) => {
+     this.ngzone.run(() => {
+       var user = firebase.auth().currentUser
+       console.log(user.uid)
+       firebase.database().ref("Offers/" + userkeyPerson + "/" + insidekey).update({
+         message: message
+       });
+     })
+   })
+ }
+
 
 }

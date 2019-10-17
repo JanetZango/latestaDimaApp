@@ -1,0 +1,37 @@
+<ion-content>
+  <ion-fab top left>
+    <button class="theFab" color="secondary2" ion-fab mini icon-only clear (click)="GoToProfile()">
+      <ion-icon class="arrow" name="arrow-back" id="mark"></ion-icon>
+    </button>
+
+  </ion-fab>
+  <h1>My Requests</h1>
+  <div *ngIf="this.myrequest.length == 0 || this.myrequest.length == undefind" class="undefinedMess">
+
+    <div class="container">
+      <img src="../../assets/empty.jpg">
+      <p>You dont have any requests yet...</p>
+    </div>
+  </div>
+  <div *ngFor="let a of myrequest">
+    <div class="main">
+      <div class="top">
+        <img src="{{a.downloadurl}}" imageViewer>
+      </div>
+      <div class="bottom">
+        <div class="btn">
+          <p><b>Amount:</b>{{a.Amount}}</p>
+          <p> <b>PO_no:</b>{{a.PO_no}}</p>
+          <p><b>companyName:</b>{{a.companyName}}</p>
+          <p><b>purpose:</b>{{a.purpose}}</p>
+          <button ion-button clear id="btn2" color="secondary2" >
+              <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+            </button>
+          <button ion-button clear id="btn" color="secondary2" (click)="edit(a.companyName)">
+            <ion-icon ios="ios-create" md="md-create"></ion-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

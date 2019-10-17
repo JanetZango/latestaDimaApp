@@ -1,13 +1,19 @@
 page-make-request {
+    h3{
+        text-align: center;
+        margin-top:100px;
+        font-family: 'Hepta Slab', serif;
+        color: #FFAF00;
+    }
     ion-content{
-        background-image: linear-gradient( rgb(243, 243, 243), rgba(243, 243, 243, 0.714)), url('../../assets/images2.jpg');
+        background-image: linear-gradient( rgb(243, 243, 243), rgba(243, 243, 243, 0.714));
         overflow-y: hidden;
     }
     .scroll-content{
         overflow-y: hidden;
     }
     .movcont{
-        margin-top:20px;
+        // margin-top:20px;
         b{
             font-size:1.5em;
             font-family: 'Hepta Slab', serif;
@@ -16,9 +22,12 @@ page-make-request {
     .maindiv{
         height:70%;
         width:100%;
-        text-align: center;
+        padding-left:20px;
+        margin-top:40px;
+        font-size: 1.3em;
+        // text-align: center;
         // margin-left:30px;
-        margin-top:30px;
+        // margin-top:30px;
         // border:2px solid red;
 
         button{
@@ -38,7 +47,7 @@ page-make-request {
 
     .top{
         background-color: #00103F;
-        height:10%;
+        height:30%;
         position: relative;
         width:100%;
         img{
@@ -48,18 +57,24 @@ page-make-request {
         }
     }
     .bottom{
-      height:90%;
+      height:70%;
       width:100%;
     }
     .divImage{
+        // border:solid red;
+        height:100%;
+        text-align: center !important;
+
         img{
-            width:90%;
+           
+            box-shadow: 4px 15px 20px -15px rgb(53, 53, 53);
+            margin-top:160px;
             object-fit: cover;
-            height:250px !important;
-            border-bottom-left-radius: 30px;
-            border-top-left-radius: 30px;
-             margin-left:30px;
-             margin-top:15px;
+            width:150px;
+            height:200px;
+            // border-radius: 100px;
+           
+            
         }
     }
     }

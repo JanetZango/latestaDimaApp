@@ -16,7 +16,7 @@
     <preference name="BackupWebStorage" value="none" />
     <preference name="SplashMaintainAspectRatio" value="true" />
     <preference name="StatusBarColor" value="white" />
-    <preference name="StatusBarBackgroundColor" value="#014C9F" />
+    <preference name="StatusBarBackgroundColor" value="#003263" />
     <preference name="FadeSplashScreenDuration" value="300" />
     <preference name="SplashShowOnlyFirstTime" value="true" />
     <preference name="SplashScreen" value="screen" />

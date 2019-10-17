@@ -30,6 +30,10 @@ import { InboxPage } from '../pages/inbox/inbox';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { PopOverProfilePage } from '../pages/pop-over-profile/pop-over-profile';
 import { ConfirmationPage } from '../pages/confirmation/confirmation';
+import { IonicImageViewerModule } from 'ionic-img-viewer';
+import { ShowmyRequestPage } from '../pages/showmy-request/showmy-request';
+import { EditRequestPage } from '../pages/edit-request/edit-request';
+
 
 
 @NgModule({
@@ -53,10 +57,13 @@ import { ConfirmationPage } from '../pages/confirmation/confirmation';
     EditprofilePage,
     InboxPage,
     PopOverProfilePage,
-    ConfirmationPage
+    ConfirmationPage,
+    ShowmyRequestPage,
+    EditRequestPage
   ],
   imports: [
     BrowserModule,
+    IonicImageViewerModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -80,7 +87,9 @@ import { ConfirmationPage } from '../pages/confirmation/confirmation';
     ProfilePage,
     SignupPage,
     SigupwithphonePage,
-    ConfirmationPage
+    ConfirmationPage,
+    ShowmyRequestPage,
+    EditRequestPage
   ],
   providers: [
     StatusBar,

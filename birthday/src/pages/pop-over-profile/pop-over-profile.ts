@@ -5,7 +5,7 @@ import { AdimaProvider } from '../../providers/adima/adima';
 import { SigninPage } from '../signin/signin';
 import { EditprofilePage } from '../editprofile/editprofile';
 import { InboxPage } from '../inbox/inbox';
-import { ThrowStmt } from '@angular/compiler';
+import { ShowmyRequestPage } from '../showmy-request/showmy-request';
 /**
  * Generated class for the PopOverProfilePage page.
  *
@@ -37,9 +37,8 @@ export class PopOverProfilePage {
     this.displayProfile();
   }
 
-
-  
-  displayProfile() {
+ 
+   displayProfile() {
     this.dima.displayProfile().then((data: any) => {
       console.log(data)
       this.arr.length = 0
@@ -62,6 +61,11 @@ export class PopOverProfilePage {
   
   inbox() {
     this.navCtrl.push(InboxPage, { orgObject: this.arr });
+  }
+
+
+  goTorequest(){
+    this.navCtrl.push(ShowmyRequestPage)
   }
 
   logOut() {

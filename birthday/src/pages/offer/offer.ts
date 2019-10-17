@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
 import { AdimaProvider } from '../../providers/adima/adima';
 import { AssociatePage } from '../associate/associate';
 import { ToastController } from 'ionic-angular';
-import { Platform } from 'ionic-angular'
 import { LocalNotifications } from '@ionic-native/local-notifications';
+import { AlertController } from "ionic-angular";
+import { InboxPage } from '../inbox/inbox';
 /**
  * Generated class for the OfferPage page.
  *
@@ -13,7 +14,7 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
  */
 
 
- declare var firebase;
+declare var firebase;
 
 @IonicPage()
 @Component({
@@ -35,7 +36,7 @@ export class OfferPage {
   downloadurl;
   Duration;
   knobValues;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public dima: AdimaProvider, public toastCtrl: ToastController,private localNotifications: LocalNotifications,public platform: Platform) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public dima: AdimaProvider, public toastCtrl: ToastController, private localNotifications: LocalNotifications, public platform: Platform, public alertCtrl: AlertController) {
     this.makeOfferArr.push(this.navParams.get('offerObject'));
     console.log(this.makeOfferArr)
     console.log(this.makeOfferArr[0].offer)
@@ -48,17 +49,25 @@ export class OfferPage {
     console.log(this.key)
 
     this.displayProfile();
-
-    // this.platform.ready().then((rdy) => {
-    //   this.localNotifications.on('click', (notification) =>{
-    //    let json = JSON.parse(notification.data);
-    //    let alert = this.alertCtrl.creat({
-    //      title: notification.title,
-    //      subTitle : json.data
-    //    })
-    //    alert.present();
-    //   })
-    // })
+    this.platform.ready().then((rdy) => {
+      this.localNotifications.on('click').subscribe(notification => {
+        let json = JSON.parse(JSON.stringify(notification.data));
+        let alert = this.alertCtrl.create({
+          title: notification.title,
+          subTitle: json.mydata,
+          buttons: [
+            {
+              text: 'View',
+              handler: data => {
+                console.log('Saved clicked');
+                this.navCtrl.push(InboxPage, { orgObject: this.makeOfferArr })
+              }
+            }
+          ]
+        });
+        alert.present();
+      });
+    });
 
   }
 
@@ -66,16 +75,16 @@ export class OfferPage {
     console.log('ionViewDidLoad OfferPage');
   }
 
-  displayProfile(){
+  displayProfile() {
     let userID = firebase.auth().currentUser;
     firebase.database().ref("App_Users/" + userID.uid).on('value', (data: any) => {
       let details = data.val();
       console.log(data.val());
-   
-      let obj ={
-        name:details.name,
-        downloadurl:details.downloadurl,
-        useridkey:userID.uid
+
+      let obj = {
+        name: details.name,
+        downloadurl: details.downloadurl,
+        useridkey: userID.uid
       }
       console.log(obj)
       this.arr.push(obj);
@@ -90,7 +99,6 @@ export class OfferPage {
   }
 
   makeoffer() {
-   
     const toast = this.toastCtrl.create({
       message: 'You have succesfully offered your donation!',
       duration: 3000
@@ -98,19 +106,19 @@ export class OfferPage {
     toast.present();
     this.navCtrl.pop();
     console.log(this.user)
-    this.dima.makeOffer(this.user, this.offerAmount, this.knobValues,this.name,this.useridkey,this.downloadurl,this.Duration,this.key).then((data) => {
+    this.dima.makeOffer(this.user, this.offerAmount, this.knobValues, this.name, this.useridkey, this.downloadurl, this.Duration, this.key).then((data) => {
       console.log(data)
 
     })
     this.platform.ready().then(() => {
       this.localNotifications.schedule({
         id: 1,
-        title:'Offer Request',
+        title: 'Offer',
         text: this.name + ' ' + 'has made you an offer',
-        trigger: {at: new Date(new Date().getTime() + 3500)},
+        trigger: { at: new Date(new Date().getTime() + 5 * 1000) },
         led: 'FF0000',
-        // data: {"id": 1, "name": this.name}
-     });
+        data: { mydata: 'Offer Amount:' + " " + this.offerAmount }
+      });
     });
   }
 

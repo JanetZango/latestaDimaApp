@@ -25,7 +25,11 @@ export class DonationPage {
   key;
   user;
   name;
-  cmpName
+  cmpName;
+  department;
+  province;
+  Supplier_no;
+  CSD_no;
   addrequestArr = new Array();
   fundingArr = new Array();
   constructor(public navCtrl: NavController, public navParams: NavParams, public dima: AdimaProvider, public toastCtrl: ToastController) {
@@ -85,7 +89,7 @@ export class DonationPage {
     });
     toast.present();
     this.navCtrl.pop();
-    this.dima.addRequestFunding(this.key, this.Amount, this.purpose, this.PO_no, this.downloadurl, this.name,this.cmpName).then((data) => {
+    this.dima.addRequestFunding(this.key, this.Amount, this.purpose, this.PO_no, this.downloadurl, this.name,this.province,this.department,this.Supplier_no,this.CSD_no).then((data) => {
       console.log(data)
     })
   }
