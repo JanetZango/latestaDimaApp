@@ -24,14 +24,21 @@ export class EditRequestPage {
   purpose;
   downloadurl;
   d =1;
-  key
+  key;
+  Supplier_no;
+  CSD_no;
+  province;
+  department;
   constructor(public navCtrl: NavController, public navParams: NavParams,public dima :AdimaProvider,public loadingCtrl: LoadingController, public alertCtrl: AlertController, public toastCtrl: ToastController) {
   
     this.orgArray.push(this.navParams.get('orgObject'));
     console.log(this.orgArray);
     this.Amount = this.orgArray[0].Amount;
     this.PO_no = this.orgArray[0].PO_no;
-    this.companyName = this.orgArray[0].companyName;
+    this.Supplier_no = this.orgArray[0].Supplier_no;
+    this.province = this.orgArray[0].province;
+    this.CSD_no = this.orgArray[0].CSD_no;
+    this.department = this.orgArray[0].department;
     this.purpose = this.orgArray[0].purpose;
     this.downloadurl = this.orgArray[0].downloadurl;
     this.key = this.orgArray[0].key;
@@ -95,8 +102,8 @@ export class EditRequestPage {
     loading.present();
     // this.dima.uploadProfilePic(this.downloadurl, this.name).then(data => {
       console.log('added to db');
-    
-      this.dima.updaterequest(this.Amount, this.PO_no, this.companyName, this.downloadurl, this.purpose,this.key).then((data) => {
+      
+      this.dima.updaterequest(this.Amount, this.PO_no, this.CSD_no, this.downloadurl, this.purpose, this.key,this.Supplier_no,this.department,this.province).then((data) => {
         this.imageArr.push(data);
       });
       console.log(this.imageArr);

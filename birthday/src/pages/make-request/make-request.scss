@@ -3,7 +3,8 @@ page-make-request {
         text-align: center;
         margin-top:100px;
         font-family: 'Hepta Slab', serif;
-        color: #FFAF00;
+        color: rgb(0, 16, 63);
+        font-family: 'Anton', sans-serif;
     }
     ion-content{
         background-image: linear-gradient( rgb(243, 243, 243), rgba(243, 243, 243, 0.714));
@@ -13,7 +14,12 @@ page-make-request {
         overflow-y: hidden;
     }
     .movcont{
-        // margin-top:20px;
+        box-shadow: 2px 15px 20px -15px rgb(53, 53, 53);
+        width:350px;
+        height:300px;
+        margin:auto;
+        padding-left: 20px;
+        padding-top:10px;
         b{
             font-size:1.5em;
             font-family: 'Hepta Slab', serif;
@@ -22,14 +28,10 @@ page-make-request {
     .maindiv{
         height:70%;
         width:100%;
-        padding-left:20px;
         margin-top:40px;
+        
         font-size: 1.3em;
-        // text-align: center;
-        // margin-left:30px;
-        // margin-top:30px;
-        // border:2px solid red;
-
+     
         button{
             border-radius: 100px;
             width:60%;
@@ -46,37 +48,27 @@ page-make-request {
     }
 
     .top{
-        background-color: #00103F;
+        background-image: linear-gradient( rgb(0, 16, 63), rgba(0, 16, 63, 0.557)), url('../../assets/card1.jpg');
         height:30%;
         position: relative;
-        width:100%;
+        text-align: center;
+        
+        
         img{
-            height:100px !important;
-            padding-left:10px;
-            padding-top:10px;
+         margin-top:150px;
+         object-fit: cover;
+         width:150px;
+         height:150px;
+         box-shadow: 4px 15px 20px -15px rgb(53, 53, 53);
+         border-radius: 100px;
+        
         }
     }
     .bottom{
       height:70%;
       width:100%;
     }
-    .divImage{
-        // border:solid red;
-        height:100%;
-        text-align: center !important;
 
-        img{
-           
-            box-shadow: 4px 15px 20px -15px rgb(53, 53, 53);
-            margin-top:160px;
-            object-fit: cover;
-            width:150px;
-            height:200px;
-            // border-radius: 100px;
-           
-            
-        }
-    }
     }
     
 

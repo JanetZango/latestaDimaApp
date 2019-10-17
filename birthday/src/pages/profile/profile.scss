@@ -216,9 +216,6 @@ page-profile {
     .top{
         height:60%;
         width:100%;
-        // border:solid red;
-        // background-color: #014c9f;
-        // background-image: linear-gradient(rgba(245, 245, 245, 0.585), rgb(255, 255, 255)), url('../../assets/blue.jpg');
         background-size:cover;
         object-fit: cover;
         //   background-attachment: fixed;
@@ -227,7 +224,7 @@ page-profile {
         img{
             // border-radius: 100%;
             width:100%;
-            height:380px;
+            height:420px;
             object-fit: cover;
 
         }
@@ -236,10 +233,10 @@ page-profile {
 
     .gradient{
         // border:solid red;
-        height:390px;
+        height:421px;
         width: 100%;
         // height:100%;
-        background: linear-gradient(rgba(255, 255, 255, 0.04),white);
+        background: linear-gradient(rgba(255, 255, 255, 0),white);
         position: absolute;
     }
     .bottom{

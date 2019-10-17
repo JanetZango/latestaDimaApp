@@ -20,11 +20,10 @@
       </div>
       <div class="bottom">
         <div class="btn">
+          <h5>{{a.department}}</h5>
           <p><b>Amount:</b>{{a.Amount}}</p>
-          <p> <b>PO_no:</b>{{a.PO_no}}</p>
-          <p><b>companyName:</b>{{a.companyName}}</p>
-          <p><b>purpose:</b>{{a.purpose}}</p>
-          <button ion-button clear id="btn2" color="secondary2" >
+          <p><b>Supplier_no:</b>{{a.Supplier_no}}</p>
+          <button ion-button clear id="btn2" color="secondary2" (click)="removeImage(a.key)">
               <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
             </button>
           <button ion-button clear id="btn" color="secondary2" (click)="edit(a.companyName)">

@@ -1,4 +1,9 @@
 page-showmy-request {
+    h5{
+        // font-family: 'Hepta Slab', serif;
+        color: rgb(0, 16, 63);
+        font-family: 'Anton', sans-serif;
+    }
     .theFab{
         box-shadow: 0 0 10px rgba(0, 0, 0, 0);
         background: white;
@@ -15,35 +20,48 @@ page-showmy-request {
     box-shadow: 2px 15px 20px -15px rgb(53, 53, 53);
     display:flex;
     margin:auto;
-    margin-top:60px;
+    margin-top:20px;
+    border-radius: 10px;
+    
 }
 
 .top{
-width:30%;
-height:100px;
+width:35%;
+height:100%;
+// border:1px solid red;
 
 img{
-    height:90px;
+    object-fit: cover;
+    height:100%;
     padding:5px;
+    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
    
 }
 
 }
 .bottom{
-    width:70%;
+    width:65%;
     height:100px;
-    padding-left:10px;
+    padding-left:12px;
     top:0;
+    
 
     p{
-        font-size:10px;
+        font-size:12px;
+        font-family: 'Hepta Slab', serif;
     }
 }
 #btn2{
     left:120px;
+    margin-top:7px;
+    margin-left:45px;
 }
 #btn{
     right:20px;
+    // margin-top:-23px;
+    margin-left:50px;
 }
 
     h1{

@@ -4,7 +4,7 @@
   </div>
   <div class="bottom">
       <p class="head">List of Associates</p>
-      <div *ngIf="  this.displayuserArr.length == 0 || this.displayuserArr.length == undefind" class="undefinedMess">
+      <div *ngIf="this.displayuserArr.length == 0 || this.displayuserArr.length == undefind" class="undefinedMess">
           <img src="../../assets/empty2.png">
           <div class="divP">
             <p>No associates avaliable yet...</p>
@@ -21,7 +21,7 @@
         <p><b>PO_no:</b>{{a.PO_no}}</p>
         <p><b>Request Amount:</b>R{{a.Amount}}</p>
         <p><b>offer:</b>{{a.offer}}</p>
-        <p><b>balance:</b>{{a.balance}}</p>
+        <p><b>balance:</b>R{{a.balance}}</p>
       </div>
       <div class="btndiv3">
           <button ion-button color="secondary2" clear (click)="gotoOffer(a.name)">aDima</button>

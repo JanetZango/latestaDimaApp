@@ -184,7 +184,7 @@ export class AdimaProvider {
         }
       })
       accept(this.paymentmade)
-   
+
     })
   }
 
@@ -203,7 +203,7 @@ export class AdimaProvider {
             downloadurl: proDetails2.downloadurl,
             message: proDetails2.message,
             insidekey: proDetails2.insidekey,
-            userkeyPerson:user.uid
+            userkeyPerson: user.uid
           }
           console.log(obj)
           this.paymentRecieved.push(obj)
@@ -258,7 +258,7 @@ export class AdimaProvider {
     })
   }
 
-  addRequestFunding(id, Amount, purpose, PO_no, downloadurl, name,province,department,Supplier_no,CSD_no) {
+  addRequestFunding(id, Amount, purpose, PO_no, downloadurl, name, province, department, Supplier_no, CSD_no) {
     console.log(id)
     return new Promise((accpt, rej) => {
       console.log(id)
@@ -270,10 +270,10 @@ export class AdimaProvider {
         name: name,
         offer: 0,
         balance: 0,
-        province:province,
-        department:department,
-        Supplier_no:Supplier_no,
-        CSD_no:CSD_no
+        province: province,
+        department: department,
+        Supplier_no: Supplier_no,
+        CSD_no: CSD_no
 
       })
     })
@@ -284,20 +284,20 @@ export class AdimaProvider {
   displayProfile() {
     return new Promise((accpt, rej) => {
       let userID = firebase.auth().currentUser;
-      this.offerArr.length =0;
+      this.offerArr.length = 0;
       firebase.database().ref("App_Users/" + userID.uid).on('value', (data: any) => {
         let details = data.val();
-        this.offerArr.length =0;
+        this.offerArr.length = 0;
         console.log(details);
         let obj = {
           user: userID.uid,
-          AccountNo:details.AccountNo,
-          ContactDetails:details.ContactDetails,
-          downloadurl:details.downloadurl,
-          email:details.email,
-          Address:details.Address,
-          cell:details.cell,
-          name:details.name
+          AccountNo: details.AccountNo,
+          ContactDetails: details.ContactDetails,
+          downloadurl: details.downloadurl,
+          email: details.email,
+          Address: details.Address,
+          cell: details.cell,
+          name: details.name
 
         }
         console.log(obj)
@@ -315,34 +315,34 @@ export class AdimaProvider {
     return new Promise((accpt, rej) => {
       let userID = firebase.auth().currentUser;
       console.log(userID.uid)
-       firebase.database().ref("Offers/" + userID.uid).on("value", (data:any) => {
+      firebase.database().ref("Offers/" + userID.uid).on("value", (data: any) => {
         let getoffers = data.val();
         console.log(getoffers)
-        this.disArr.length =0;
+        this.disArr.length = 0;
         console.log(getoffers)
-        if(data.val() != null || data.val()){
+        if (data.val() != null || data.val()) {
           let key1 = Object.keys(getoffers)
-          for(var i =0; i<key1.length;i++){
+          for (var i = 0; i < key1.length; i++) {
             let obj = {
               user: userID.uid,
-              offer:getoffers[key1[i]].offer,
-              personOffering:getoffers[key1[i]].personOffering,
-              downloadurl:getoffers[key1[i]].downloadurl,
-              userkey:getoffers[key1[i]].userkey,
-              Duration:getoffers[key1[i]].Duration,
-              terms:getoffers[key1[i]].terms,
-              hasAccepted:getoffers[key1[i]].hasAccepted,
-              insidekey:getoffers[key1[i]].insidekey,
-              key:key1[i]
-              
+              offer: getoffers[key1[i]].offer,
+              personOffering: getoffers[key1[i]].personOffering,
+              downloadurl: getoffers[key1[i]].downloadurl,
+              userkey: getoffers[key1[i]].userkey,
+              Duration: getoffers[key1[i]].Duration,
+              terms: getoffers[key1[i]].terms,
+              hasAccepted: getoffers[key1[i]].hasAccepted,
+              insidekey: getoffers[key1[i]].insidekey,
+              key: key1[i]
+
             }
             console.log(obj)
             this.disArr.push(obj)
             console.log(this.disArr)
           }
         }
-      
-        
+
+
         accpt(this.disArr)
       })
     })
@@ -372,13 +372,15 @@ export class AdimaProvider {
             console.log(keys2)
 
             for (var z = 0; z < keys2.length; z++) {
-              if (requestDetails2[keys2[z]].balance == this.outstanding) {
-                requestDetails2[keys2[z]].balance = requestDetails2[keys2[z]].Amount - requestDetails2[keys2[z]].offer
+              if(this.offer != 0 ){
+                if(this.balance == this.outstanding){
+                  this.balance =  requestDetails2[keys2[z]].Amount - requestDetails2[keys2[z]].offer
+                }
               }
-              let obj = {
+            let obj = {
                 Amount: requestDetails2[keys2[z]].Amount,
                 PO_no: requestDetails2[keys2[z]].PO_no,
-                balance: requestDetails2[keys2[z]].balance,
+                balance: this.balance,
                 downloadurl: requestDetails2[keys2[z]].downloadurl,
                 offer: requestDetails2[keys2[z]].offer,
                 purpose: requestDetails2[keys2[z]].purpose,
@@ -390,6 +392,8 @@ export class AdimaProvider {
                 key: keys2[z],
                 user: keys1[x]
               }
+           
+              console.log(this.balance)
               console.log(obj)
               this.getaddedRequests.push(obj)
               console.log(this.getaddedRequests)
@@ -408,51 +412,55 @@ export class AdimaProvider {
     return new Promise((accpt, rej) => {
       let user = firebase.auth().currentUser;
       this.getaddedRequests.length = 0;
-          firebase.database().ref("AddRequestFundings/" + user.uid).on("value", (data2) => {
-            let requestDetails2 = data2.val();
-            console.log(requestDetails2)
-            let keys2 = Object.keys(requestDetails2)
-            console.log(keys2)
-            this.getaddedRequests.length = 0;
-            for (var z = 0; z < keys2.length; z++) {
-              let obj = {
-                Amount: requestDetails2[keys2[z]].Amount,
-                PO_no: requestDetails2[keys2[z]].PO_no,
-                balance: requestDetails2[keys2[z]].balance,
-                downloadurl: requestDetails2[keys2[z]].downloadurl,
-                offer: requestDetails2[keys2[z]].offer,
-                purpose: requestDetails2[keys2[z]].purpose,
-                name: requestDetails2[keys2[z]].name,
-                companyName: requestDetails2[keys2[z]].companyName,
-                key: keys2[z],
-                user:user.uid
-               
-              }
-              console.log(obj)
-              this.getaddedRequests.push(obj)
-              console.log(this.getaddedRequests)
+      firebase.database().ref("AddRequestFundings/" + user.uid).on("value", (data2) => {
+        let requestDetails2 = data2.val();
+        console.log(requestDetails2)
+        if(data2.val() != null || data2.val()!= undefined){
+          let keys2 = Object.keys(requestDetails2)
+          console.log(keys2)
+          this.getaddedRequests.length = 0;
+          for (var z = 0; z < keys2.length; z++) {
+            let obj = {
+              Amount: requestDetails2[keys2[z]].Amount,
+              PO_no: requestDetails2[keys2[z]].PO_no,
+              balance: requestDetails2[keys2[z]].balance,
+              downloadurl: requestDetails2[keys2[z]].downloadurl,
+              offer: requestDetails2[keys2[z]].offer,
+              purpose: requestDetails2[keys2[z]].purpose,
+              name: requestDetails2[keys2[z]].name,
+              department: requestDetails2[keys2[z]].department,
+              CSD_no: requestDetails2[keys2[z]].CSD_no,
+              Supplier_no: requestDetails2[keys2[z]].Supplier_no,
+              province: requestDetails2[keys2[z]].province,
+  
+              key: keys2[z],
+              user: user.uid
+  
             }
+            console.log(obj)
+            this.getaddedRequests.push(obj)
+            console.log(this.getaddedRequests)
+          }
+        }
+      })
+      accpt(this.getaddedRequests)
 
-
-          })
-          accpt(this.getaddedRequests)
-
-        })
+    })
   }
 
-  makeOffer(key, offer, terms, name, userkey, downloadurl,Duration,insidekey) {
+  makeOffer(key, offer, terms, name, userkey, downloadurl, Duration, insidekey) {
     return new Promise((accpt, rej) => {
-        console.log(key)
-        firebase.database().ref("Offers/" + key).push({
+      console.log(key)
+      firebase.database().ref("Offers/" + key).push({
         offer: offer,
         terms: terms + "%interest",
         personOffering: name,
         userkey: userkey,
         downloadurl: downloadurl,
-        Duration:Duration,
-        hasAccepted:false,
-        message:"",
-        insidekey:insidekey
+        Duration: Duration,
+        hasAccepted: false,
+        message: "",
+        insidekey: insidekey
       })
     })
   }
@@ -552,7 +560,7 @@ export class AdimaProvider {
   }
 
 
-  updaterequest(Amount, PO_no, companyName, downloadurl, purpose,key){
+  updaterequest(Amount, PO_no, CSD_no, downloadurl, purpose, key,Supplier_no,department,province) {
     return new Promise((pass, fail) => {
       this.ngzone.run(() => {
         var user = firebase.auth().currentUser
@@ -560,9 +568,12 @@ export class AdimaProvider {
         firebase.database().ref("AddRequestFundings/" + user.uid + "/" + key).update({
           Amount: Amount,
           PO_no: PO_no,
-          companyName: companyName,
+          CSD_no: CSD_no,
           downloadurl: downloadurl,
-          purpose: purpose
+          purpose: purpose,
+          Supplier_no:Supplier_no,
+          department:department,
+          province:province
 
         });
       })
@@ -828,37 +839,50 @@ export class AdimaProvider {
     });
   }
 
-
-
-  createinbox(key,name,downloadurl,offer,terms,Duration,user,insidekey){
+  RemoveOfferRquest(key) {
+    console.log(key)
     return new Promise((accpt, rej) => {
-      firebase.database().ref('AcceptedOfferbyoffee/' + key).push({
-				name: name,
-        downloadurl: downloadurl,
-        offer:offer,
-        terms:terms,
-        Duration:Duration,
-        message:"they have accepted your offer",
-        user:user,
-        insidekey:insidekey
-			});
-			accpt('inbox sent');
+      var user = firebase.auth().currentUser
+      console.log(key)
+      console.log(user.uid)
+      this.ngzone.run(() => {
+        firebase.database().ref("AddRequestFundings/" + user.uid + "/" + key).remove();
+        accpt("student deleted");
+      });
     });
   }
 
-  createinbox2(user,downloadurl1,person,offer,terms,Duration,key,insidekey){
+
+
+  createinbox(key, name, downloadurl, offer, terms, Duration, user, insidekey) {
+    return new Promise((accpt, rej) => {
+      firebase.database().ref('AcceptedOfferbyoffee/' + key).push({
+        name: name,
+        downloadurl: downloadurl,
+        offer: offer,
+        terms: terms,
+        Duration: Duration,
+        message: "they have accepted your offer",
+        user: user,
+        insidekey: insidekey
+      });
+      accpt('inbox sent');
+    });
+  }
+
+  createinbox2(user, downloadurl1, person, offer, terms, Duration, key, insidekey) {
     return new Promise((accpt, rej) => {
       firebase.database().ref('AcceptedOfferbyOwner/' + user).push({
         downloadurl: downloadurl1,
-        person:person,
-        offer:offer,
-        terms:terms,
-        Duration:Duration,
-        message:"Accepted",
-        key:key,
-        insidekey:insidekey
-			});
-			accpt('inbox sent');
+        person: person,
+        offer: offer,
+        terms: terms,
+        Duration: Duration,
+        message: "Accepted",
+        key: key,
+        insidekey: insidekey
+      });
+      accpt('inbox sent');
     });
   }
 
@@ -869,14 +893,14 @@ export class AdimaProvider {
       console.log(user.uid)
       firebase.database().ref("AcceptedOfferbyoffee/" + user.uid).on('value', (data: any) => {
         let accDeatils = data.val();
-        this.getcreate.length=0;
+        this.getcreate.length = 0;
         console.log(accDeatils)
-        if(data.val() != null || data.val() != undefined){
+        if (data.val() != null || data.val() != undefined) {
           // this.getcreate.length=0;
           let keys2 = Object.keys(accDeatils)
           console.log(keys2)
-            // this.getcreate.length=0;
-          for( var x =0 ; x < keys2.length; x++){
+          // this.getcreate.length=0;
+          for (var x = 0; x < keys2.length; x++) {
             let obj = {
               Duration: accDeatils[keys2[x]].Duration,
               name: accDeatils[keys2[x]].name,
@@ -886,18 +910,18 @@ export class AdimaProvider {
               terms: accDeatils[keys2[x]].terms,
               message: accDeatils[keys2[x]].message,
               insidekey: accDeatils[keys2[x]].insidekey,
-              UserKey:user.uid
+              UserKey: user.uid
             }
             console.log(obj)
             this.getcreate.push(obj)
             console.log(this.getcreate)
           }
-         
+
         }
-       
+
         accept(this.getcreate)
       })
-   
+
     })
   }
 
@@ -909,11 +933,11 @@ export class AdimaProvider {
       firebase.database().ref("AcceptedOfferbyOwner/" + user.uid).on('value', (data: any) => {
         let accDeatils = data.val();
         console.log(accDeatils)
-        if(data.val() != null || data.val() != undefined){
+        if (data.val() != null || data.val() != undefined) {
           let keys2 = Object.keys(accDeatils)
-          this.getcreate.length=0;
+          this.getcreate.length = 0;
           console.log(keys2)
-          for( var x =0 ; x < keys2.length; x++){
+          for (var x = 0; x < keys2.length; x++) {
             let obj = {
               Duration: accDeatils[keys2[x]].Duration,
               name: accDeatils[keys2[x]].person,
@@ -928,7 +952,7 @@ export class AdimaProvider {
             this.getcreate2.push(obj)
             console.log(this.getcreate2)
           }
-         
+
         }
 
       })
@@ -937,8 +961,8 @@ export class AdimaProvider {
   }
 
 
-  updateoffereddonation(userkeyPerson,offer,insidekey){
-     return new Promise((pass, fail) => {
+  updateoffereddonation(userkeyPerson, offer, insidekey) {
+    return new Promise((pass, fail) => {
       this.ngzone.run(() => {
         var user = firebase.auth().currentUser
         console.log(user.uid)
@@ -949,17 +973,17 @@ export class AdimaProvider {
     })
   }
 
-  updateofferedmessage(userkeyPerson,message,insidekey){
+  updateofferedmessage(userkeyPerson, message, insidekey) {
     return new Promise((pass, fail) => {
-     this.ngzone.run(() => {
-       var user = firebase.auth().currentUser
-       console.log(user.uid)
-       firebase.database().ref("Offers/" + userkeyPerson + "/" + insidekey).update({
-         message: message
-       });
-     })
-   })
- }
+      this.ngzone.run(() => {
+        var user = firebase.auth().currentUser
+        console.log(user.uid)
+        firebase.database().ref("Offers/" + userkeyPerson + "/" + insidekey).update({
+          message: message
+        });
+      })
+    })
+  }
 
 
 }

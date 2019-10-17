@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AdimaProvider } from '../../providers/adima/adima';
 import { AlertController } from "ionic-angular";
 import { ToastController } from 'ionic-angular';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+
 /**
  * Generated class for the InboxPage page.
  *
