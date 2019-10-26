@@ -1,13 +1,22 @@
 page-inbox {
+    .content{
+     
+        background-image: linear-gradient( rgb(0, 16, 63), rgba(0, 16, 63, 0.557)), url('../../assets/card1.jpg');
+        background-size:cover;
+        background-repeat: no-repeat;
+    }
     .theFab{
         box-shadow: 0 0 10px rgba(0, 0, 0, 0);
-        background: white;
+        background: transparent;
+   
     }
     .arrow{
         color: #014C9F;
+        font-size: 2em;
     }
     h1{
-        color: #014C9F;
+        color:white;
+        font-family: 'Lato', sans-serif;
     }
 .main{
     height:140px;
@@ -30,6 +39,7 @@ height:100%;
 img{
     height:100%;
     width:100%;
+    object-fit: cover;
     border-top-left-radius: 10px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -40,12 +50,27 @@ img{
 }
 .bottom{
     width:70%;
-    height:100px;
+    height:100%;
     padding-left:10px;
-
+    background-image: linear-gradient( rgb(0, 16, 63), rgb(16, 39, 110)), url('../../assets/card1.jpg');
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
     p{
         font-size:11px;
+        color:white;
+        font-family: 'Lato', sans-serif;
     }
+
+
+    button{
+        border:1px solid #014C9F;
+        // background-color:#014C9F;
+        margin-top:-5px;
+    }
+}
+
+.btn{
+    // background-color:#014C9F;
 }
 
     h1{
@@ -57,7 +82,7 @@ img{
         p{
             font-family: 'Courier New', Courier, monospace;
             text-align: center;
-            color:#014b9f;
+            color:white;
             margin-top:-40px;
         }
    

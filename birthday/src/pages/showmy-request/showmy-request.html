@@ -1,4 +1,4 @@
-<ion-content>
+<ion-content class="content">
   <ion-fab top left>
     <button class="theFab" color="secondary2" ion-fab mini icon-only clear (click)="GoToProfile()">
       <ion-icon class="arrow" name="arrow-back" id="mark"></ion-icon>
@@ -9,7 +9,7 @@
   <div *ngIf="this.myrequest.length == 0 || this.myrequest.length == undefind" class="undefinedMess">
 
     <div class="container">
-      <img src="../../assets/empty.jpg">
+      <img src="../../assets/empty2.png">
       <p>You dont have any requests yet...</p>
     </div>
   </div>
@@ -23,12 +23,14 @@
           <h5>{{a.department}}</h5>
           <p><b>Amount:</b>{{a.Amount}}</p>
           <p><b>Supplier_no:</b>{{a.Supplier_no}}</p>
-          <button ion-button clear id="btn2" color="secondary2" (click)="removeImage(a.key)">
+          <div class="btn">
+            <button ion-button clear  (click)="removeImage(a.key)">Close
               <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
             </button>
-          <button ion-button clear id="btn" color="secondary2" (click)="edit(a.companyName)">
-            <ion-icon ios="ios-create" md="md-create"></ion-icon>
-          </button>
+            <button ion-button clear  (click)="edit(a.companyName)">Edit
+              <ion-icon ios="ios-create" md="md-create"></ion-icon>
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -1,28 +1,53 @@
+
 <ion-content class="content">
   <div class="top">
-  
+    <ion-buttons left>
+      <button ion-button clear icon-only menuToggle class="menu">
+          <ion-icon  ios="ios-menu" md="md-menu"></ion-icon>
+      </button>
+    </ion-buttons>
   </div>
-
   <div class="bottom">
+   
       <p class="head">Categories</p>
-      <div class="maindiv">
-          <div class="div1" (click)="makerequest()">
-              <img src="../../assets/give-money.png">
-            <p class="card-title">Peer to Peer</p>
-          </div>
-          <div class="div2" (click)="gotoAssociate()">
-            <img src="../../assets/search.png"> 
-            <p class="card-title">Market Place</p>
-          </div>
+        <div class="maindiv">
+            <ion-slides pager="true" background-color="secondary4">
+                <ion-slide class="slide1">
+                    <ion-card class="div1" (click)="makerequest()">
+                        <img src="../../assets/money 3.png">
+                      <p class="card-title">Peer to Peer</p>
+                    
+                    </ion-card>
+                    <div class="content1">
+                        <p class="card-title2">Description</p>
+                        <p class="card-titledesc2">Payment is made between two people that 
+                        made <br>an agreement.</p>
+                    </div>
+                  
+                </ion-slide>
+                <ion-slide>
+                    <ion-card class="div2" (click)="gotoAssociate()">
+                        <img src="../../assets/search.png"> 
+                        <p class="card-title">Market Place</p>
+                    </ion-card>
+                    <div class="content1">
+                        <p class="card-title2">Description</p>
+                        <p class="card-titledesc2">A market place where you get to 
+                        see people that need <br>money and you can 
+                        also lend money.</p>
+                    </div>
+                </ion-slide>
+              </ion-slides>
         </div>
+     
   </div>
-
+<!-- 
  <ion-fab right bottom>
     <button ion-fab color="secondary2"><ion-icon ios="ios-menu" md="md-menu"></ion-icon></button>
     <ion-fab-list side="left">
       <button ion-fab (click)="profile()"><ion-icon ios="ios-person" md="md-person"></ion-icon></button>
-      <!-- <button ion-fab (click)="gotoContact()"><ion-icon ios="ios-contacts" md="md-contacts" ></ion-icon></button> -->
+      <button ion-fab (click)="gotoContact()"><ion-icon ios="ios-contacts" md="md-contacts" ></ion-icon></button>
       <button ion-fab (click)="gotoDnation()"> <ion-icon name="add" ></ion-icon></button>
     </ion-fab-list>
-  </ion-fab>
+  </ion-fab> -->
 </ion-content>

@@ -1,7 +1,7 @@
-<ion-content>
+<ion-content class="content">
   <div class="seconddiv">
-    <button ion-button clear (click)="makeoffer()">
-      <ion-icon ios="ios-checkmark" md="md-checkmark"></ion-icon>
+    <button ion-button clear>
+        <ion-icon class="arrow" name="arrow-back" id="mark" (click)="gotoass()"></ion-icon>
     </button>
   </div>
   <h3>Set loan condition</h3>
@@ -21,6 +21,10 @@
         <ion-option value="6 months">6 months</ion-option>
       </ion-select>
     </ion-item>
-    <ion-input class="input" placeholder="Enter Offer amount" type="number" [(ngModel)]="offerAmount"></ion-input>
+    <ion-input class="input" type="number"  placeholder="Enter Offer amount" [(ngModel)]="offerAmount"></ion-input>
+    <div class="mainButton">
+        <button ion-button color="secondary4" id="btn32" (click)="makeoffer()">aDima</button>
+      </div>
   </div>
+ 
 </ion-content>

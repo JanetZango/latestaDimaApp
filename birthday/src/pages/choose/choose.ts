@@ -33,4 +33,8 @@ export class ChoosePage {
     this.navCtrl.push(SigupwithphonePage)
   }
 
+  gotoRegister(){
+    this.navCtrl.push(SigninPage)
+  }
+
 }

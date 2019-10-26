@@ -1,113 +1,98 @@
 page-list {
   .content{
-    overflow-y: hidden;
+    background-image: linear-gradient( rgb(0, 16, 63), rgba(0, 16, 63, 0.557)), url('../../assets/card1.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+  
+  .button-inner{
+    color:white;
+  }
+   .slide1{
+    // height:90%;
+    // border:2px solid red;
+   }
+  .desc{
+    margin-top:40px;
   }
     .div1{
-        height:300px;
-        // width:300px;
-        margin:20px;
-        text-align: center;
-        // border:2px solid red;
-        box-shadow: 2px 15px 20px -15px rgb(53, 53, 53);
-        border-radius: 10px;
-        background-color: #F6F6F6;
-        object-fit: cover;
-        background-size: cover;
-        // background-image: linear-gradient(#f4f4f4ad, rgba(243, 243, 243, 0.387)), url('../../assets/images.png');
-        animation: 1.2s rollIn;
+     width:90%;
+     height:450px;
+     margin:0px auto;
+     border-radius: 3%;
+     background-color: white;
+   
+     box-shadow: 2px 6px 8px rgba(0, 0, 0, 0.637);
+     
+    
 
-        img{
-            height:180px;
-            width:190px;
-            padding-left:10px;
-            padding-top:10px;
-          
-        }
     }
     .div2{
-      height:300px;
-      margin:20px;
-      // width:300px;
-      background-color: white;
-      box-shadow: 2px 15px 20px -15px rgb(53, 53, 53);
-      border-radius: 10px;
-      text-align: center;
-      animation: 1.2s rollIn;
-    //   position: relative;
-      img{
-        height:170px;
-        width:300px;
-          padding-left:10px;
-          padding-top:10px;
-          width:150px;
-        
-      }
+      width:90%;
+      height:450px;
+      margin:0px auto;
+      border-radius: 3%;
+      background-color: #00103F;
+      box-shadow: 2px 6px 8px rgba(0, 0, 0, 0.637);
   }
   
-  ion-content{
-   overflow-y: hidden;
-   background-color: #ffffff;
-   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%2300103f' fill-opacity='0.67' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
 
-  }
   .maindiv{
-      // border:solid red;
       height:100%;
-      // margin:auto  !important;
-      margin-top:70px;
+      margin-top:-60px;
       z-index:10;
-      text-align:center;
+      // text-align:center;
       color:white;
       font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
       
   }
   .head{
     font-size:3em;
+    font-family: 'Playfair Display', serif;
+  
   }
   .card-title{
       text-align: center;
       font-size: 1.7em;
-      font-family: 'Crimson Text', serif;
-      color:#014C9F;
+      font-family: 'Lato', sans-serif;
+      color:#014b9f;
   }
+  .card-title2{
+    font-family: 'Anton', sans-serif;
+    color:white;
+
+}
+.card-titledesc2{
+  color:white;
+  font-size: 0.8em;
+}
+.content1{
+  text-align: left;
+  padding-left:25px;
+  margin-top:60px;
+}
   .top{
-      background-color: #00103F;
-      height:30%;
-      width:100%;
-      z-index:1;
-      position: absolute;
-    //   border-bottom-right-radius: 10px;
-    //   border-bottom-left-radius: 10px;
-      img{
-          height:50px;
-          padding-left:10px;
-          padding-top:10px;
-         
-          border:2px solid red;
-      }
-      button{
-        border:2px solid white;
-        // border-radius: 100%;
-      }
+    height:10%;
+    width:100%;
+    // background-color: #EEB528;
+    position: relative;
+    // background-color: green;
+    
   }
   .bottom{
     height:90%;
     width:100%;
-    z-index:1;
-    position: relative;
-   
- 
+    position: absolute;
+    // background-color: green;
   }
 
   .head{
-    // margin:10px;
-    // margin-top:-100px;
-    // z-index:10;
     font-size:2.2em;
-
-    text-align:center;
+    padding-left:30px;
+    text-align:left;
     color:white;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Lato', sans-serif;
+    margin-top:-20px;
 }
 
   button{

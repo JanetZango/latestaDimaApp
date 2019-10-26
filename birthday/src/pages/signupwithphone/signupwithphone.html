@@ -3,7 +3,7 @@
   <div class="divImage">
     <img src="../../assets/icon.png">
   </div>
-  <p class="header">aDima</p>
+  <p class="header">Create an Account</p>
   <div id="recaptcha-container"></div>
   <div class="theCard">
         <ion-input type="text" id="anim1" placeholder="Username" [(ngModel)]="name" ></ion-input>
@@ -16,10 +16,11 @@
   </div>
   </div>
   <div class="divbtn">
-      <button ion-button (click)="sendCode()">SIGN UP</button>
+      <button ion-button id="anim2"  (click)="sendCode()">sign up</button>
   </div>
   <div class="moveCont2">
-      <button ion-button clear (click)="gotoSignin()">Sign In</button>
+      <button ion-button clear (click)="gotoSignin()">Back To
+            &nbsp;<b>Sign in  <ion-icon ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon></b></button>
   </div> 
   <div *ngIf="this.win.windowRef.confirmationResult">
   <p class="font" for="code">Enter your Verification Code Here</p><br>

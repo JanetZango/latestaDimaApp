@@ -5,11 +5,20 @@
                 </div>
           
             <div class="btnDiv">
-                <p class="p">Welcome to adima</p>
-                <p>You can sign up using your phoneNumber or Email Address</p>
-                <button clear ion-button (click)="email()">Sign In with Email</button>
-                <br>
-                <button clear ion-button (click)="phone()">Sign In with PhoneNumber</button>
+                <p class="p">New User?</p>
+                <p>Welcome To aDima app Sign Up
+                   Below To <br>Explore The App.</p>
+                <div class="buttons">
+                    <button id="btn" ion-button (click)="email()">Sign In with Email</button>
+                    <br>
+                    <button clear id="btn2"  ion-button (click)="phone()">Sign In with PhoneNumber</button>
+                </div>
+            
+            </div>
+            <div class="moveCont2">
+                <button class="changebtn" ion-button clear (click)="gotoRegister()">Back To
+                    &nbsp;<b>Sign in  <ion-icon ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon></b>
+                  </button>
             </div>
   </div>
 </ion-content>

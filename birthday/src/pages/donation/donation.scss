@@ -1,28 +1,38 @@
 page-donation {
+    .content{
+        width:100%;
+        height:100%;
+      
+      background-image: linear-gradient( rgb(0, 16, 63), rgba(0, 16, 63, 0.557)), url('../../assets/card1.jpg');
+       background-size:cover;
+       background-repeat: no-repeat;
+   
+    }
     h3{
         text-align: center;
         text-transform: capitalize;
-        color:#00103F;
+        color:white;
         padding-top:50px;
+        font-family: 'Lato', sans-serif;
     }
      .alert-md .alert-head{
         color: #00103F;
     }
     
     .input{
-        background-color: #00103F;
+        background-color: transparent;
         width:85%;
         margin:25px auto;
-        border-radius: 100px;
+        border:1px solid #2597FB;
         color:white;
-        // margin-top:40px;
-        
+
     }
     #item{
-        border:2px solid #00103F;
+        background-color: transparent;
         width:85%;
         margin:0px auto;
-        border-radius: 30px;
+        border:1px solid #2597FB;
+        
     }
     .item-block{
         border:2px solid #00103F;
@@ -36,14 +46,14 @@ page-donation {
     }
     
     .seconddiv{
-        // border:2px solid #014C9F;
+     
         padding-top:10px;
-        padding-right: 10px;
+        padding-right:10px;
+        text-align: right;
         button{
-            font-size: 1.6em;
-            margin-left:85%;
-            border-radius: 200px;
-            // box-shadow: 2px 2px 2px rgba(1, 75, 159, 0.544);
+            color:#2597FB;
+            border:1px solid #2597FB;
+            
         }
        
     }
@@ -79,7 +89,7 @@ page-donation {
         // }
     }
     h5{
-        color:#EEB528;
+        color:white;
         padding-left:15px;
     }
     

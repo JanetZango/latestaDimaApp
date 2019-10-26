@@ -1,5 +1,9 @@
 page-makepayment {
- 
+    .content{
+        background-image: linear-gradient( rgb(0, 16, 63), rgba(0, 16, 63, 0.557)), url('../../assets/card1.jpg');
+        background-size:cover;
+        background-repeat: no-repeat;
+    }
     .imgdiv{
         padding-left:10px;
         padding-top:5px;
@@ -7,11 +11,11 @@ page-makepayment {
         // border:2px solid red;
     
         img{
-            height:40px;
-            width: 65px;
+            height:20%;
+            width: 70%;
             padding-left:2px;
             border-radius: 100%;
-           
+            object-fit: cover;
             // border:solid red;
         
         }
@@ -21,13 +25,20 @@ page-makepayment {
         width:70%;
         // padding-left:7px;
         padding-top:20px;
-        color:#014C9F;
+        color:white;
         // border:2px solid red;
         p{
             text-transform: capitalize;
-            font-family: 'Abril Fatface', cursive;
+            font-family: 'Lato', sans-serif;
 
         }
+    }
+    #anim2{
+        border :1px solid #2597FB;
+        width:90%;  
+        height:30px;
+        text-align: center;
+        color: #2597FB;;
     }
     button{
         width:50%;
@@ -38,16 +49,7 @@ page-makepayment {
         // border:2px solid red;
     }
 
-    .top{
-        background-color: #00103F;
-        height:10%;
-        width:100%;
-        img{
-            height:50px;
-            padding-left:10px;
-            padding-top:10px;
-        }
-    }
+ 
     .bottom{
       height:90%;
     //   border:solid red;
@@ -60,10 +62,11 @@ page-makepayment {
         width:90%;
         margin:10px auto;
         display: flex;
-         //   padding-top: 50px;
-        // margin-top:50px;
+        background-color: #00103F;
         box-shadow: 7px 10px 10px 12px rgba(53, 53, 53, 0.075);
         border-radius: 10px;
+        box-shadow: 2px 6px 8px rgba(0, 0, 0, 0.637);
+        background-image: linear-gradient( rgb(0, 16, 63), rgb(16, 39, 110)), url('../../assets/card1.jpg');
 
         img{
             height:70px;
@@ -72,14 +75,10 @@ page-makepayment {
         }
     }
     .btndiv3{
-        margin-top:-15px;
+        margin-top:-20px;
+        margin-left:110px;
           
-        button{
-            width:60%;
-            border-radius: 100px;
-            height:30px;
-            left:80px;
-        }
+      
     }
     .divP{
         text-align: center;
@@ -88,14 +87,10 @@ page-makepayment {
     }
     
   .head{
-    // margin:10px;
-    margin-top:-50px;
-    z-index:10;
-    font-size:1.7em;
-
-    text-align:center;
-    color:white;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:#2597FB;
+    text-align: center;
+    font-size:2.5em;
+    font-family: 'Playfair Display', serif;
 }
 }
 

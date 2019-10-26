@@ -1,14 +1,14 @@
-<ion-content>
+<ion-content class="content">
   <div class="seconddiv">
-    <button ion-button clear color="secondary2" (click)="addRequest()">
-      <ion-icon ios="ios-checkmark" md="md-checkmark"></ion-icon>
+    <button ion-button clear color="secondary2" (click)="addRequest()">Add Request
+      <ion-icon ios="ios-add" md="md-add"></ion-icon>
     </button>
   </div>
   <h3>add your request</h3>
   <div class="inputs">
     <ion-input placeholder="Enter the PO_no" type="number" class="input" [(ngModel)]="PO_no"></ion-input>
     <ion-input placeholder="Enter the Supplier_no" type="text" class="input" [(ngModel)]="Supplier_no"></ion-input>
-    <ion-input placeholder="Enter Company CSD_no" type="number" class="input" [(ngModel)]="CSD_no"></ion-input>
+    <ion-input placeholder="Enter Company name" type="text" class="input" [(ngModel)]="CSD_no"></ion-input>
     <ion-input placeholder="Enter Amount" type="number" class="input" [(ngModel)]="Amount"></ion-input>
     <ion-item id="item">
       <ion-label>Purpose of funding</ion-label>

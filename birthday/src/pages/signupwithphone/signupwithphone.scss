@@ -1,6 +1,5 @@
 page-signupwithphone {
     .move{
-        // border:solid red;
         height:100%;
         margin-top:60px;
 
@@ -15,30 +14,25 @@ page-signupwithphone {
     .header{
         font-size: 2em;
         color:white;
-        font-family: 'Roboto Slab', serif;
+        font-family: 'Lato', sans-serif;
         text-align: center;
     }
   
     #anim1{
-      
-        // background-color: rgb(38, 41, 93);
-        border-radius: 100px;
-        border:1px solid #FFAF00;
-        width:80%;  
+        border-bottom:1px solid #2597FB;
+        width:70%;  
         height:50px;
         text-align: center;
         margin:20px auto;
-        padding-left:20px;
-        padding-top:-10px;
         color:white;
     }
     .divbtn{
-        // border:2px solid red;
         margin-top:20px;
         text-align:center;
+        text-transform: capitalize;
         button{
-        border-radius: 100px;
-        width:200px;
+        border-radius: 5px;
+        width:60%;  
         }
     }
     .input{
@@ -47,19 +41,29 @@ page-signupwithphone {
         text-align: center;
         border-radius: 10px;
         padding-top:10px;
-            //  background-color:#E9E9E9;
-        // background-image: linear-gradient( rgb(243, 243, 243), rgba(243, 243, 243, 0.714)), url('../../assets/images2.jpg');
-        // background-color: #014C9F;
     
+    
+    }
+    #anim2{
+        border-radius: 5px;
+        width:60%;  
+        text-transform: capitalize;
+
     }
     .theCard{
         text-align: center;
     }
     .moveCont2{
         text-align: center; 
+        color:white;
+        margin-top:40px;
         button{
 
             text-transform: capitalize;
+            margin-top:10px;
+        }
+        b{
+            color:white;   
         }
   
     }
@@ -77,21 +81,16 @@ page-signupwithphone {
         padding-top:10px;
         color:white;
         background-color: transparent;
-        // background-image: linear-gradient( rgb(243, 243, 243), rgba(243, 243, 243, 0.714)), url('../../assets/images2.jpg');
-        // background-color: #014C9F;
+
     
     }
     .inoutdiv{
-        // border:2px solid #014C9F;
         text-align: center;
-        border-radius: 100px;
-        // background-color: #014C9F;
-        width:80%;
+        border-bottom:1px solid #2597FB;
+        width:70%;  
         height:50px;
         margin:0px auto;
-        border:1px solid #FFAF00;
-        // box-shadow: 1px 3px #014C9F;
-        // margin-top:20px;
+     
        
     }
     .font{
@@ -105,17 +104,14 @@ page-signupwithphone {
         border:1px solid #FFAF00;
     }
     .input2{
-        // background-color: #014C9F;
     }
     .input3{
        text-align: center;
     }
 
     .content{
-        background-image: linear-gradient( rgba(0, 16, 63, 0.803), #00103F), url('../../assets/pic.jpg');
-        background-size:cover;
-        //   background-attachment: fixed;
-          background-repeat: no-repeat;
+        background-image: linear-gradient( rgb(0, 16, 63), rgba(0, 16, 63, 0.557)), url('../../assets/card1.jpg');        background-size:cover;
+        background-repeat: no-repeat;
     }
     
 }

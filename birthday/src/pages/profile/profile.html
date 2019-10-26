@@ -15,7 +15,7 @@
     
 
     <div class="ourSegment">
-      <ion-segment color="secondary4" [(ngModel)]="request">
+      <ion-segment color="light" [(ngModel)]="request">
         <ion-segment-button value="inbox" ngSelected="selected">
           Personal Details
         </ion-segment-button>
@@ -35,7 +35,7 @@
     <div [ngSwitch]="request">
       <ion-list *ngSwitchCase="'associate'">
         <div *ngIf="  this.paymentArr.length == 0 || this.paymentArr.length == undefind" class="undefinedMess">
-          <img src="../../assets/empty.jpg">
+          <img src="../../assets/empty2.png">
           <div>
             <p>No payment has been made yet...</p>
           </div>
@@ -102,7 +102,7 @@
 
       <ion-list *ngSwitchCase="'accepted'">
         <div *ngIf="this.recieveArr.length == 0 || this.recieveArr.length == undefind" class="undefinedMess">
-          <img src="../../assets/empty.jpg">
+          <img src="../../assets/empty2.png">
           <div>
             <p>No one has been accepted yet...</p>
           </div>

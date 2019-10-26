@@ -11,6 +11,7 @@ page-choose {
         text-align: center;
         color:white;
         font-size:2.5em;
+      
     }
     .btnDiv{
         // border:2px solid red;
@@ -27,15 +28,38 @@ page-choose {
            margin:10px auto;
            margin-top:20px;
            color:white;
-           font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-           text-transform: capitalize;
+           font-family: 'Lato', sans-serif;
+        //    text-transform: capitalize;
         }
     }
     .cont{
-        background-image: linear-gradient( rgba(0, 16, 63, 0.803), #00103F), url('../../assets/pic.jpg');
+        background-image: linear-gradient( rgb(0, 16, 63), rgba(0, 16, 63, 0.557)), url('../../assets/card1.jpg');
      background-size:cover;
      //   background-attachment: fixed;
        background-repeat: no-repeat;
     }
-   
+    #btn{
+        width:80%;
+        border-radius: 5px;
+    }
+    #btn2{
+        width:80%;
+        border-radius: 5px;
+        border :1px solid #2597FB;
+    }
+    .buttons{
+        // border:2px solid red;
+        margin-top:70px;
+    }
+    .changebtn{
+        text-transform: capitalize;
+        b{
+            color:white;
+        }
+    }
+    .moveCont2{
+        text-align: center;
+        margin-top:80px;
+  
+    }
 }

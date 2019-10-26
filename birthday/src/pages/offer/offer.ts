@@ -122,5 +122,9 @@ export class OfferPage {
     });
   }
 
+  gotoass(){
+    this.navCtrl.push(AssociatePage)
+  }
+
 }
 

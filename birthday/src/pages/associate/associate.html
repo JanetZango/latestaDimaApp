@@ -1,11 +1,13 @@
-<ion-content>
-  <div class="top">
-    <!-- <img [src]="img" /> -->
+<ion-content class="content">
+  <div class="seconddiv">
+    <button ion-button clear>
+        <ion-icon class="arrow" name="arrow-back" id="mark" (click)="gotoass()"></ion-icon>
+    </button>
   </div>
   <div class="bottom">
       <p class="head">List of Associates</p>
       <div *ngIf="this.displayuserArr.length == 0 || this.displayuserArr.length == undefind" class="undefinedMess">
-          <img src="../../assets/empty2.png">
+          <img class="img3" src="../../assets/empty2.png">
           <div class="divP">
             <p>No associates avaliable yet...</p>
           </div>
@@ -16,18 +18,17 @@
       </div>
     
       <div class="details">
-        <p><b>Name:</b>{{a.name}}</p> 
-        <p><b>Company CSD_no:</b>{{a.CSD_no}}</p>
-        <p><b>PO_no:</b>{{a.PO_no}}</p>
+        <p><b>CompanyName:</b>{{a.CSD_no}}</p> 
         <p><b>Request Amount:</b>R{{a.Amount}}</p>
         <p><b>offer:</b>{{a.offer}}</p>
-        <p><b>balance:</b>R{{a.balance}}</p>
+        <button ion-button clear (click)="gotoOffer(a.name)">aDima</button>
+        <button ion-button  clear (click)="gottoRequest(a.name)">View More</button>
       </div>
-      <div class="btndiv3">
-          <button ion-button color="secondary2" clear (click)="gotoOffer(a.name)">aDima</button>
-        <button ion-button color="secondary2" clear (click)="gottoRequest(a.name)">View More</button>
+   
     </div>
-    </div>
+
+
+  
   </div>
 
 </ion-content>

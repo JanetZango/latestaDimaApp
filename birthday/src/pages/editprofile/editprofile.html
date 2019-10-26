@@ -6,11 +6,7 @@
 
   </ion-fab>
 
-  <ion-fab top right>
-    <button class="theFab" color="secondary2" ion-fab mini icon-only clear (click)="uploadPicture()">
-      <ion-icon class="arrow" ios="ios-create" md="md-create"></ion-icon>
-    </button>
-  </ion-fab>
+
 
   <div class="containerdiv">
     <div class="round">
@@ -58,7 +54,9 @@
       <ion-input type="number" [value]="ContactDetails" [(ngModel)]="ContactDetails" placeholder="ContactDetails">
       </ion-input>
     </ion-item><br>
-
+    <div class="btn2">
+      <button ion-button (click)="uploadPicture()">Edit Profile</button>
+    </div>
 
   </div>
 

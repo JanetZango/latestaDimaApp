@@ -1,4 +1,10 @@
 page-pay {
+
+    .content{
+        background-image: linear-gradient( rgb(0, 16, 63), rgba(0, 16, 63, 0.557)), url('../../assets/card1.jpg');
+        background-size:cover;
+        background-repeat: no-repeat;
+    }
     .maindiv{
         height:70%;
         width:100%;
@@ -6,7 +12,7 @@ page-pay {
         // border:2px solid red;
 
         button{
-            border-radius: 100px;
+            // border-radius: 100px;
             width:60%;
             height:30px;
         }
@@ -31,7 +37,12 @@ page-pay {
     }
     b{
         font-family: 'Playfair Display', serif;
+        color:white;
  
+    }
+    p{
+        color:white;
+        text-transform: capitalize;
     }
 
     .top{
@@ -49,6 +60,7 @@ page-pay {
        font-family: 'Satisfy', cursive;
         margin-top:50px;
         text-transform: capitalize;
+        color:white;
         
     }
     .bottom{

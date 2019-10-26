@@ -933,9 +933,10 @@ export class AdimaProvider {
       firebase.database().ref("AcceptedOfferbyOwner/" + user.uid).on('value', (data: any) => {
         let accDeatils = data.val();
         console.log(accDeatils)
+        this.getcreate.length = 0;
         if (data.val() != null || data.val() != undefined) {
           let keys2 = Object.keys(accDeatils)
-          this.getcreate.length = 0;
+          this.getcreate2.length = 0;
           console.log(keys2)
           for (var x = 0; x < keys2.length; x++) {
             let obj = {

@@ -3,7 +3,7 @@
   <div class="move">
       <div class="divImage">
         <img src="../../assets/icon.png">
-          <p>aDima</p>
+          <p>Create an Account</p>
         </div>
     <div class="theCard">
         <ion-input placeholder="Name" type="text" name="username" #username="ngModel" class="user-input" id="anim1" ngModel required></ion-input>
@@ -17,11 +17,13 @@
 
     </div>
    <div class="moveCont">
-        <button ion-button  class="btnSign" id="anim2" (click)="SignUp(email.value, password.value, username.value)">SIGN UP</button>
+        <button ion-button  class="btnSign" id="anim2" (click)="SignUp(email.value, password.value, username.value)">sign up</button>
 
     </div>
      <div class="moveCont2">
-        <button ion-button clear (click)="gotoSignin()">Sign In</button>
+        <button ion-button clear (click)="gotoSignin()">Back To
+        &nbsp;<b>Sign in  <ion-icon ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon></b>
+      </button>
     </div> 
 
   </div>

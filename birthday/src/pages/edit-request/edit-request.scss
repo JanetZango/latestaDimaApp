@@ -1,7 +1,23 @@
 page-edit-request {
+    .maindiv{
+        margin-top:30px;
+        text-align: center;
+        button{
+            width:60%;
+        }
+    }
+    .content{
+        width:100%;
+        height:100%;
+      
+      background-image: linear-gradient( rgb(0, 16, 63), rgba(0, 16, 63, 0.557)), url('../../assets/card1.jpg');
+       background-size:cover;
+       background-repeat: no-repeat;
+   
+    }
     .theFab{
         box-shadow: 0 0 10px rgba(0, 0, 0, 0);
-        background: white;
+        background: transparent;
     }
     ion-icon{
         color: white;
@@ -15,8 +31,8 @@ page-edit-request {
         top: 50px;
     }
     .item{
-        border-radius: 50px;
-        background-color:  #00103F;
+        // border-radius: 50px;
+        background-color:  transparent;
         color: white;
         ::-webkit-input-placeholder{
             color: rgb(199, 199, 199);
